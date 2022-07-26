@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovable : IMovable
+public class EnemyMovable : MonoBehaviour, IMovable
 {
-    public void Move()
+    public void Move(Transform transform)
     {
 
     }

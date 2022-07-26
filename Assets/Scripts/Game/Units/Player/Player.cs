@@ -1,18 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class Player : MonoBehaviour
 {
-    PlayerMovable playerMovement;
-    Skin skin;
-    Weapon currentWeapon;
+    internal Skin skin;
+    internal Weapon currentWeapon;
+    [SerializeField] Skin nextSkin;
 
-
-    Player(PlayerMovable playerMovable)
+    [Inject]
+    public void Construct(Skin _skin)
     {
-        playerMovement = playerMovable;
+        skin = _skin;
     }
+
+    private void Update()
+    {
+        ChangeSkin();
+    }
+
+    private void ChangeSkin()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+
+        }
+    }
+
 
     private void DoShot()
     {

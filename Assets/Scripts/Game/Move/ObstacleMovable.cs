@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleMovable : IMovable
+public class ObstacleMovable : MonoBehaviour, IMovable
 {
-    public void Move()
+    public void Move(Transform transform)
     {
 
     }
