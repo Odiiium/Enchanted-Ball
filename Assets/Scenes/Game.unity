@@ -155,6 +155,7 @@ MonoBehaviour:
   player: {fileID: 8584237597414260413, guid: 563098ebcc545834685f13e57aac66b0, type: 3}
   spawnPosition: {fileID: 1385297}
   playerController: {fileID: 408774716777995969, guid: 6b40c27f437dc664d93aec3a7e5e5908, type: 3}
+  Ballprefab: {fileID: 7505751974826646048, guid: 76c99bc65d582454dacc87455fafde65, type: 3}
 --- !u!4 &1385297
 Transform:
   m_ObjectHideFlags: 0
@@ -616,6 +617,10 @@ PrefabInstance:
       objectReference: {fileID: 1385296}
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
+      propertyPath: _monoInstallers.Array.data[2]
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2281435816614521260, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}

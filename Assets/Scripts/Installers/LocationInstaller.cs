@@ -1,28 +1,28 @@
 using Zenject;
 using UnityEngine;
 
-public class LocationInstaller : MonoInstaller 
+public class LocationInstaller : MonoInstaller
 {
     [SerializeField] GameObject player;
     [SerializeField] Transform spawnPosition;
     [SerializeField] PlayerController playerController;
+    [SerializeField] Ball Ballprefab;
 
     public override void InstallBindings()
     {
-        BindPlayerSkin();
-        BindPlayerWeapon();
+        BindFactory();
         BindPlayer();
         BindPlayerController();
-        
     }
-
 
     private void BindPlayer()
     {
         Player playerModel = Container.
             InstantiatePrefabForComponent<Player>(player, spawnPosition.position, Quaternion.identity, null);
         Container.Bind<Player>().FromInstance(playerModel).AsSingle().NonLazy();
+
         Container.Bind<PlayerMovable>().FromInstance(new PlayerMovable()).AsSingle().NonLazy();
+
     }
 
     private void BindPlayerController()
@@ -32,14 +32,8 @@ public class LocationInstaller : MonoInstaller
         Container.Bind<PlayerController>().FromInstance(playerControllerModel).AsSingle().NonLazy();
     }
 
-    private void BindPlayerSkin()
+    private void BindFactory()
     {
-        Container.Bind<Skin>().FromComponentInChildren(player).AsSingle().NonLazy();
+        Container.BindFactory<Ball, BallFactory>().FromComponentInNewPrefab(Ballprefab);
     }
-    
-    private void BindPlayerWeapon()
-    {
-        Container.Bind<Weapon>().FromComponentInHierarchy(player).AsSingle().NonLazy();
-    }
-
 }
