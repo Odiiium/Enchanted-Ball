@@ -13,20 +13,16 @@ public class AimRayCaster : MonoBehaviour
         aimRay = _aimRay;
     }
 
+    private void Awake() => aimRay.Line.SetPosition(1, Vector3.zero);
+
     void Update()
     {
         MoveRay();
         SetupSecondPointPosition();
     }
 
-    private void MoveRay()
-    {
-        aimRay.aimRayMovable.Move(aimRay.secondPoint.transform);
-    }
+    private void MoveRay() => aimRay.aimRayMovable.Move(aimRay.secondPoint.transform);
 
-    private void SetupSecondPointPosition()
-    {
-        aimRay.Line.SetPosition(0, aimRay.secondPoint.transform.position);
-    }
+    private void SetupSecondPointPosition() => aimRay.Line.SetPosition(0, aimRay.secondPoint.transform.position);
 
 }

@@ -20,7 +20,13 @@ public class Weapon : MonoBehaviour
     internal Ball Shot()
     {
         Ball createdBall = ballFactory.Create();
-        createdBall.transform.position = Player.transform.position;
+        MoveBallToShotPoint(createdBall);
         return createdBall;
+    }
+
+    private void MoveBallToShotPoint(Ball createdBall)
+    {
+        createdBall.transform.position = Player.transform.position + new Vector3(0, 0.4f, 0.3f);
+        createdBall.MoveToShotPoint();
     }
 }

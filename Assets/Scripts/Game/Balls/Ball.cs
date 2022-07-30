@@ -1,12 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
-public class Ball : MonoBehaviour
+public abstract class Ball : MonoBehaviour
 {
-    Weapon weapon;
-    Skin ballSkin;
-    Rigidbody rigidBody;
+    Player player;
+    internal BallMovable BallMovable { get => ballMovable ??= GetComponent<BallMovable>(); }
+    BallMovable ballMovable;
+
+    [Inject]
+    void Construct(Player _player)
+    {
+        player = _player;
+    }
+
+    internal void MoveToShotPoint() => BallMovable.Move(player.transform);
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -31,6 +41,4 @@ public class Ball : MonoBehaviour
     {
         ballVisitor.Visit(this);
     }
-
-
 }
