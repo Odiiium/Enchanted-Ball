@@ -18,5 +18,4 @@ public class AimRay : MonoBehaviour
         firstPoint = _firstPoint;
         secondPoint = _secondPoint;
     }
-
 }

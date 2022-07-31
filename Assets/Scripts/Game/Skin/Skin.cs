@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class Skin : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    internal Animator Animator { get => animator ??= animator = GetComponent<Animator>(); }
+    Animator animator;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

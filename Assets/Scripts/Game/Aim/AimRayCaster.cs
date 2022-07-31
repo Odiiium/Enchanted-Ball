@@ -4,12 +4,10 @@ using Zenject;
 public class AimRayCaster : MonoBehaviour
 {
     AimRay aimRay;
-    Player player;
 
     [Inject]
-    void Construct(AimRay _aimRay, Player _player)
+    void Construct(AimRay _aimRay)
     {
-        player = _player;
         aimRay = _aimRay;
     }
 
@@ -17,11 +15,8 @@ public class AimRayCaster : MonoBehaviour
 
     void Update()
     {
-        MoveRay();
         SetupSecondPointPosition();
     }
-
-    private void MoveRay() => aimRay.aimRayMovable.Move(aimRay.secondPoint.transform);
 
     private void SetupSecondPointPosition() => aimRay.Line.SetPosition(0, aimRay.secondPoint.transform.position);
 

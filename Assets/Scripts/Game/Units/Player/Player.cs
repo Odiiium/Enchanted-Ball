@@ -5,21 +5,25 @@ using Zenject;
 
 public class Player : MonoBehaviour
 {
-    private Skin skin;
+    StateMachine playerStateMachine;
     internal Skin Skin { get => skin ??= GetComponentInChildren<Skin>(); set => skin = value;} 
-
-    private Weapon currentWeapon;
+    private Skin skin;
     private Weapon CurrentWeapon { get => currentWeapon ??= GetComponentInChildren<Weapon>(); set => currentWeapon = value; }
+    private Weapon currentWeapon;
 
-    private void Update()
+
+    [Inject]
+    void Construct(PlayerStateMachine _playerStateMachine)
     {
-        if (Input.GetMouseButton(0))
-        {
-            DoShot();
-        }
+        playerStateMachine = _playerStateMachine;
     }
 
-    private void DoShot()
+    private void Start()
+    {
+        playerStateMachine.Initialize(new PlayerAimingState());
+    }
+
+    internal void DoShot()
     {
         Ball ball = CurrentWeapon.Shot();
         ball.Accept(new BallProvider());

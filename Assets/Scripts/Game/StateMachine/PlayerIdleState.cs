@@ -1,15 +1,12 @@
 ﻿
-public class PlayerIdleState : State
+public class PlayerIdleState : IState
 {
-    internal override void Enter()
+    public void Enter()
     {
     }
 
-    internal override void Exit()
+    public void Exit()
     {
-    }
 
-    internal override void Update()
-    {
     }
 }

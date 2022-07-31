@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-
 public abstract class StateMachine : MonoBehaviour
 {
-    internal State currentState;
+    internal IState currentState;
 
-    internal virtual void Initialize(State startState)
+    internal virtual void Initialize(IState startState)
     {
         currentState = startState;
-        startState.Enter();
+        currentState.Enter();
     }
 
-    internal virtual void ChangeState(State state)
+    internal virtual void ChangeState(IState state)
     {
         currentState.Exit();
         currentState = state;
