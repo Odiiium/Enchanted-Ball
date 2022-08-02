@@ -4,6 +4,8 @@ public class PlayerAttackState : IState
 {
     Player player;
     int AttackIndex { get => attackIndex == 3 ? attackIndex = 0 : attackIndex++; }
+    public DiContainer diContainer { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
     int attackIndex;
 
 
