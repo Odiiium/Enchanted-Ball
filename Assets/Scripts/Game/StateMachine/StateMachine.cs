@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Zenject;
-public abstract class StateMachine : MonoBehaviour
+public abstract class StateMachine
 {
     internal IState currentState;
+    internal DiContainer diContainer;
 
     internal virtual void InitializeState(IState startState)
     {
         currentState = startState;
+        currentState.DiContainer = this.diContainer;
         currentState.Enter();
     }
 
@@ -15,6 +17,7 @@ public abstract class StateMachine : MonoBehaviour
     {
         currentState.Exit();
         currentState = state;
+        currentState.DiContainer = this.diContainer;
         currentState.Enter();
     }
 

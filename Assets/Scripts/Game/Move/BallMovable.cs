@@ -15,6 +15,6 @@ public class BallMovable : MonoBehaviour , IMovable
 
     public void Move(Transform playerTransform)
     {
-        RigidBody.AddForce(aimRay.secondPoint.transform.position - playerTransform.position, ForceMode.Impulse);
+        RigidBody.AddForce((aimRay.secondPoint.transform.position - playerTransform.position).normalized * 10, ForceMode.Impulse);
     }
 }

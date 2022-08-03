@@ -8,7 +8,7 @@ public class PlayerAimingState : IState
     public DiContainer DiContainer { get { return diContainer; } set { diContainer = value; } }
     DiContainer diContainer;
 
-    void Construct()
+    public void Construct()
     {
         aimRay = DiContainer.Resolve<AimRay>();
     }
@@ -28,4 +28,5 @@ public class PlayerAimingState : IState
     }
 
     private void MoveTheAim() => aimRay.aimRayMovable.Move(aimRay.secondPoint.transform);
+
 }

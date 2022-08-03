@@ -3,26 +3,26 @@ using Zenject;
 public class PlayerAttackState : IState
 {
     Player player;
-    int AttackIndex { get => attackIndex == 3 ? attackIndex = 0 : attackIndex++; }
-    public DiContainer DiContainer { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    internal static int AttackIndex { get => attackIndex == 3 ? attackIndex = 0 : attackIndex++;}
+    static int attackIndex;
+    public DiContainer DiContainer { get { return diContainer; } set { diContainer = value; } }
+    DiContainer diContainer;
 
-    int attackIndex;
-
-
-    [Inject]
-    void Construrt(Player _player)
+    public void Construct()
     {
-        player = _player;
+        player = DiContainer.Resolve<Player>();
     }
 
     public void Enter()
     {
+        Construct();
         player.DoShot();
-        player.Skin.Animator.SetTrigger($"Attack{attackIndex}");
+        player.Skin.Animator.SetTrigger($"Attack{AttackIndex}");
+        player.playerStateMachine.ChangeState(new PlayerIdleState());
     }
 
     public void Exit()
     {
-        throw new System.NotImplementedException();
+
     }
 }

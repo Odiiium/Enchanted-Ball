@@ -2,27 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
+using UniRx;
 
 public class Player : MonoBehaviour
-{ 
-    PlayerStateMachine playerStateMachine;
+{
+    internal PlayerStateMachine playerStateMachine;
+    internal PlayerStateMachine.Factory playerStateFactory;
+    PlayerMovementCanvas playerMovementCanvas;
+
     internal Skin Skin { get => skin ??= GetComponentInChildren<Skin>(); set => skin = value;} 
     private Skin skin;
     private Weapon CurrentWeapon { get => currentWeapon ??= GetComponentInChildren<Weapon>(); set => currentWeapon = value; }
     private Weapon currentWeapon;
-    DiContainer diContainer;
-    PlayerStateMachine.Factory stateFactory;
+
 
     [Inject]
-    void Construct(PlayerStateMachine _playerStateMachine, PlayerStateMachine.Factory _stateFactory)
+    void Construct(PlayerStateMachine.Factory _playerStateFactory, PlayerMovementCanvas _playerMovementCanvas)
     {
-        playerStateMachine = _playerStateMachine;
-        stateFactory = _stateFactory;
+        playerStateFactory = _playerStateFactory;
+        playerMovementCanvas = _playerMovementCanvas;
     }
 
     private void Start()
     {
-        stateFactory.Create().InitializeState(new PlayerAimingState());
+        playerMovementCanvas.Controller.Model.SetInitialAimingState(this);
     }
 
     internal void DoShot()
