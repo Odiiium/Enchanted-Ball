@@ -685,6 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStateMachine: {fileID: 2403973837043393813, guid: 45d46e64f918d31489868c34afbcfae1, type: 3}
+  playerAimingState: {fileID: 1568128240038469644, guid: 93ee7cc13b4a6c849b23b8ad651b5297, type: 3}
 --- !u!4 &1363590605
 Transform:
   m_ObjectHideFlags: 0
@@ -841,15 +842,15 @@ PrefabInstance:
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.data[0]
       value: 
-      objectReference: {fileID: 1363590604}
+      objectReference: {fileID: 1604564262}
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.data[1]
       value: 
-      objectReference: {fileID: 1604564262}
+      objectReference: {fileID: 391709285}
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.data[2]
       value: 
-      objectReference: {fileID: 391709285}
+      objectReference: {fileID: 1363590604}
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.data[3]
       value: 

@@ -1,20 +1,21 @@
 ﻿using UnityEngine;
 using Zenject;
 using UniRx;
-public class PlayerAimingState : MonoBehaviour, IState
+public class PlayerAimingState : IState
 {
     CompositeDisposable disposable;
     AimRay aimRay;
-    public DiContainer diContainer { get; set; }
+    public DiContainer DiContainer { get { return diContainer; } set { diContainer = value; } }
+    DiContainer diContainer;
 
-    [Inject]
-    void Construct(AimRay _aimray)
+    void Construct()
     {
-        aimRay = _aimray;
+        aimRay = DiContainer.Resolve<AimRay>();
     }
 
     public void Enter()
     {
+        Construct();
         disposable = new CompositeDisposable();
         aimRay.gameObject.SetActive(true);
         Observable.EveryUpdate().Subscribe(_ => MoveTheAim()).AddTo(disposable);

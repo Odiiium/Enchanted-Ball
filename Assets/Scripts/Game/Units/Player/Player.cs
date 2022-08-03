@@ -10,16 +10,19 @@ public class Player : MonoBehaviour
     private Skin skin;
     private Weapon CurrentWeapon { get => currentWeapon ??= GetComponentInChildren<Weapon>(); set => currentWeapon = value; }
     private Weapon currentWeapon;
+    DiContainer diContainer;
+    PlayerStateMachine.Factory stateFactory;
 
     [Inject]
-    void Construct(PlayerStateMachine _playerStateMachine)
+    void Construct(PlayerStateMachine _playerStateMachine, PlayerStateMachine.Factory _stateFactory)
     {
         playerStateMachine = _playerStateMachine;
+        stateFactory = _stateFactory;
     }
 
     private void Start()
     {
-        playerStateMachine.InitializeState(playerStateMachine.playerAimingState);
+        stateFactory.Create().InitializeState(new PlayerAimingState());
     }
 
     internal void DoShot()

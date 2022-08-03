@@ -2,13 +2,32 @@
 using UnityEngine;
 using Zenject;
 
-public class PlayerStateMachine : StateMachine
+public class PlayerStateMachine
 {
-    internal PlayerAimingState playerAimingState;
+    internal DiContainer diContainer;
+    IState currentState;
 
     [Inject]
-    void Construct(PlayerAimingState _playerAimingState)
+    void Construct(DiContainer _diContainer)
     {
-        playerAimingState = _playerAimingState;
+        diContainer = _diContainer;
+        Debug.Log("INJECTED");
     }
+
+    internal void InitializeState(IState startState)
+    {
+        currentState = startState;
+        currentState.DiContainer = this.diContainer;
+        currentState.Enter();
+    }
+
+    internal void ChangeState(IState state)
+    {
+        state.DiContainer = this.diContainer;
+        currentState.Exit();
+        currentState = state;
+        currentState.Enter();
+    }
+
+    public class Factory : PlaceholderFactory<PlayerStateMachine> { }
 }
