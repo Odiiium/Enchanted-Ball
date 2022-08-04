@@ -5,9 +5,12 @@ using Zenject;
 
 public class GridBuilder : MonoBehaviour
 {
-    GridScale gridScale;
+    internal GridScale gridScale;
     FirstTile firstTile;
     SecondTile secondTile;
+
+    internal List<Tile> tileArray = new List<Tile>();
+    Tile tileToAdd;
 
     [Inject]
     void Construct(FirstTile _firstTile, SecondTile _secondTile, GridScale _gridScale)
@@ -32,10 +35,19 @@ public class GridBuilder : MonoBehaviour
 
     private void SetupATile(int lengthIndex, int widthIndex)
     {
+        var numberOfTile = lengthIndex * gridScale.xScale + widthIndex;
         if (gridNumber(lengthIndex, widthIndex) % 2 == 1)
-            Instantiate(firstTile, SpawnPosition(lengthIndex, widthIndex), firstTile.transform.rotation, gameObject.transform);
+        {
+            tileToAdd = Instantiate
+                (firstTile, SpawnPosition(lengthIndex, widthIndex), firstTile.transform.rotation, gameObject.transform); 
+            tileArray.Add(tileToAdd);
+        }
         else
-            Instantiate(secondTile, SpawnPosition(lengthIndex, widthIndex), secondTile.transform.rotation, gameObject.transform);
+        {
+            tileToAdd = Instantiate
+                (secondTile, SpawnPosition(lengthIndex, widthIndex), secondTile.transform.rotation, gameObject.transform);
+            tileArray.Add(tileToAdd);
+        }
     }
 
     private Vector3 SpawnPosition(int lengthIndex, int widthIndex)

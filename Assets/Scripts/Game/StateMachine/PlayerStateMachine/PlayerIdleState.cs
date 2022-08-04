@@ -1,5 +1,4 @@
-﻿
-using Zenject;
+﻿using Zenject;
 
 public class PlayerIdleState : IState
 {

@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class Obstacle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    ObstacleMovable obstacleMovable;
+    internal Tile Tile { get => tile; set => tile = value; }
+    Tile tile;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public class Pool : MemoryPool<Obstacle> { }
 }
