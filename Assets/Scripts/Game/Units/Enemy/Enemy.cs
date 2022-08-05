@@ -5,7 +5,7 @@ using Zenject;
 
 public class Enemy : MonoBehaviour, IEnemy
 {
-    EnemyMovable enemyMovable;
+    EnemyMovable enemyMovable = new EnemyMovable();
     internal Tile Tile { get => tile; set => tile = value; }
     Tile tile;
     DiContainer diContainer;

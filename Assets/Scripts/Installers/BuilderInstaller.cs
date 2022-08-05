@@ -8,19 +8,20 @@ public class BuilderInstaller : MonoInstaller
     Enemy enemy;
     Obstacle ObstacleToSpawn { get => obstacle ??= Resources.Load<Obstacle>("Obstacle/Cube"); }
     Obstacle obstacle;
+    Wall WallToSpawn { get => wall ??= Resources.Load<Wall>("Walls/Wall"); }
+    Wall wall;
 
     public override void InstallBindings()
     {
-        BindEnemy();
-        BindObstacle();
         BindPools();
         BindLevelBuilder();
     }
 
     private void BindPools()
     {
-        Container.BindMemoryPool<Enemy, Enemy.Pool>().WithInitialSize(0).FromComponentInNewPrefab(EnemyToSpawn);
-        Container.BindMemoryPool<Obstacle, Obstacle.Pool>().WithInitialSize(0).FromComponentInNewPrefab(ObstacleToSpawn);
+        Container.BindMemoryPool<Enemy, Enemy.Pool>().FromComponentInNewPrefab(EnemyToSpawn);
+        Container.BindMemoryPool<Obstacle, Obstacle.Pool>().FromComponentInNewPrefab(ObstacleToSpawn);
+        Container.BindMemoryPool<Wall, Wall.Pool>().FromComponentInNewPrefab(WallToSpawn);
     }
     private void BindLevelBuilder()
     {
@@ -28,9 +29,5 @@ public class BuilderInstaller : MonoInstaller
             (levelBuilder, Vector3.zero, Quaternion.identity, null);
         Container.Bind<LevelBuilder>().FromInstance(levelBuilderModel).AsSingle().NonLazy();
     }
-
-    private void BindEnemy() => Container.Bind<Enemy>().FromComponentInNewPrefab(EnemyToSpawn).AsSingle().NonLazy();
-    private void BindObstacle() => Container.Bind<Obstacle>().FromComponentInNewPrefab(ObstacleToSpawn).AsSingle().NonLazy();
-
 
 }

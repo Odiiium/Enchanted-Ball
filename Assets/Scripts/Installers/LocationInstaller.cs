@@ -5,6 +5,7 @@ public class LocationInstaller : MonoInstaller
 {
     [SerializeField] GameObject player;
     [SerializeField] Transform spawnPosition;
+    [SerializeField] TurnChanger turnChanger;
 
     Ball BallPrefab { get => ballPrefab ??= Resources.Load<Ball>("Balls/Sphere"); }
     Ball ballPrefab;
@@ -13,6 +14,7 @@ public class LocationInstaller : MonoInstaller
     {
         BindFactory();
         BindPlayer();
+        BindTurnChanger();
     }
 
     private void BindPlayer()
@@ -25,5 +27,12 @@ public class LocationInstaller : MonoInstaller
     private void BindFactory()
     {
         Container.BindFactory<Ball, BallFactory>().FromComponentInNewPrefab(BallPrefab);
+    }
+
+    private void BindTurnChanger()
+    {
+        TurnChanger turnChangerModel = Container.
+            InstantiatePrefabForComponent<TurnChanger>(turnChanger, spawnPosition.position, Quaternion.identity, null);
+        Container.Bind<TurnChanger>().FromInstance(turnChangerModel).AsSingle().NonLazy();
     }
 }

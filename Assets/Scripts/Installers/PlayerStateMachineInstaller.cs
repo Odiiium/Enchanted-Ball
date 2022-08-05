@@ -1,7 +1,7 @@
 using Zenject;
 using UnityEngine;
 
-public class StateMachineFabricInstaller : MonoInstaller 
+public class PlayerStateMachineInstaller : MonoInstaller 
 {
     [SerializeField] PlayerStateMachine playerStateMachine;
 

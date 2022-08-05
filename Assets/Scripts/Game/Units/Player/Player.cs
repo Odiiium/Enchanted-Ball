@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
     internal void DoShot()
     {
         Ball ball = CurrentWeapon.Shot();
-        ball.Accept(new BallProvider());
     }
 
 }
