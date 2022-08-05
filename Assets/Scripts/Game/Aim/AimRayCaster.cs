@@ -19,4 +19,5 @@ public class AimRayCaster : MonoBehaviour
     }
 
     private void ChangeAimRaySecondPoint() => aimRay.Line.SetPosition(0, aimRay.secondPoint.transform.position.normalized * 4);
+
 }

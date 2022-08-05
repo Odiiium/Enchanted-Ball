@@ -27,6 +27,4 @@ public class TurnChanger : MonoBehaviour
         foreach (Enemy enemy in levelBuilder.enemyList) enemy.Jump();
         foreach (Obstacle obstacle in levelBuilder.obstacleList) obstacle.Move();
     }
-
-
 }

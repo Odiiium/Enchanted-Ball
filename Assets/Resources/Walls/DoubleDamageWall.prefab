@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 416608119010868452}
   - component: {fileID: 5984929676438661448}
   m_Layer: 3
-  m_Name: Wall
+  m_Name: DoubleDamageWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fbf232e6ed877094e8f94b81a2e1fadc, type: 2}
+  - {fileID: 2100000, guid: e812455e57248a04cae1ae49d7a2660f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
