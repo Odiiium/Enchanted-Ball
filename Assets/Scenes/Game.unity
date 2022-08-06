@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovementCanvas: {fileID: 5798573018217416412, guid: 0a025ead4738a8f48b83a17504d97f77, type: 3}
+  playerHealbarCanvas: {fileID: 1415529977239792154, guid: 6f9c8d6f01387fd418d976ca2d21dd6a, type: 3}
 --- !u!4 &254081620
 Transform:
   m_ObjectHideFlags: 0
@@ -731,6 +732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelBuilder: {fileID: 658431327686105843, guid: 4d0f1192b1e27c24a97d43fbbb565555, type: 3}
+  playerBorderCollider: {fileID: 9004074915622945984, guid: db4227f8108d0c94e8d10feb2e934e9d, type: 3}
 --- !u!4 &2039857439
 Transform:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using Zenject;
 public class BuilderInstaller : MonoInstaller
 {
     [SerializeField] LevelBuilder levelBuilder;
+    [SerializeField] PlayerBorderCollider playerBorderCollider;
     Enemy EnemyToSpawn { get => enemy ??= Resources.Load<Enemy>("Enemy/NyanSlime"); }
     Enemy enemy;
     Obstacle ObstacleToSpawn { get => obstacle ??= Resources.Load<Obstacle>("Obstacle/Cube"); }
@@ -13,6 +14,7 @@ public class BuilderInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
+        BindPlayerBorderCollider();
         BindPools();
         BindLevelBuilder();
     }
@@ -28,6 +30,13 @@ public class BuilderInstaller : MonoInstaller
         LevelBuilder levelBuilderModel = Container.InstantiatePrefabForComponent<LevelBuilder>
             (levelBuilder, Vector3.zero, Quaternion.identity, null);
         Container.Bind<LevelBuilder>().FromInstance(levelBuilderModel).AsSingle().NonLazy();
+    }
+
+    private void BindPlayerBorderCollider()
+    {
+        PlayerBorderCollider playerBorderColliderModel = Container.InstantiatePrefabForComponent<PlayerBorderCollider>
+            (playerBorderCollider, Vector3.zero, Quaternion.identity, null);
+        Container.Bind<PlayerBorderCollider>().FromInstance(playerBorderColliderModel).AsSingle().NonLazy();
     }
 
 }
