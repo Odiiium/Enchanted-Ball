@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-public class PlayerBorderCollider : MonoBehaviour
+public class WallBorderCollider : MonoBehaviour
 {
     GridScale gridScale;
     internal Collider Collider { get => usedCollider ??= GetComponent<Collider>(); }

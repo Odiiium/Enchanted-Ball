@@ -11,8 +11,7 @@ public class Enemy : MonoBehaviour, IEnemy
     Tile tile;
     DiContainer diContainer;
     int damage = 50;
-
-    internal Tile Tile { get => tile; set => tile = value; }
+    internal FloatReactiveProperty HealthPoints = new FloatReactiveProperty(500);
     PlayerHealthBarCanvas playerHealthBarCanvas { get => diContainer.Resolve<PlayerHealthBarCanvas>(); }
     PlayerBorderCollider playerBorderCollider { get => diContainer.Resolve<PlayerBorderCollider>(); }
     LevelBuilder LevelBuilder { get => levelBuilder ??= diContainer.Resolve<LevelBuilder>(); }
@@ -23,20 +22,18 @@ public class Enemy : MonoBehaviour, IEnemy
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 8) Die();
+        if (other.gameObject.layer == 8) HealthPoints.Value = 0;
     }
 
-    public void Die()
+    public void Die(Enemy enemy, List<Enemy> enemyList)
     {
         Attack();
-        LevelBuilder.enemyPool.Despawn(this);
-        LevelBuilder.enemyList.Remove(this);
+        enemyList.RemoveAt(enemyList.IndexOf(enemy));
         Destroy(gameObject);
     }
     public void Attack() => playerHealthBarCanvas.Controller.ReduceHealthPoints(damage);
 
     public void Jump() => enemyMovable.Move(transform);
 
-
-    public class Pool : MemoryPool<Enemy> { }
+    public class Factory : PlaceholderFactory<Enemy> { }
 }

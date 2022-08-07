@@ -5,38 +5,36 @@ public class BuilderInstaller : MonoInstaller
 {
     [SerializeField] LevelBuilder levelBuilder;
     [SerializeField] PlayerBorderCollider playerBorderCollider;
-    Enemy EnemyToSpawn { get => enemy ??= Resources.Load<Enemy>("Enemy/NyanSlime"); }
-    Enemy enemy;
-    Obstacle ObstacleToSpawn { get => obstacle ??= Resources.Load<Obstacle>("Obstacle/Cube"); }
-    Obstacle obstacle;
-    Wall WallToSpawn { get => wall ??= Resources.Load<Wall>("Walls/Wall"); }
-    Wall wall;
+    [SerializeField] WallBorderCollider wallBorderCollider;
+
+    [SerializeField] Transform levelBuilderParentTransform;
 
     public override void InstallBindings()
     {
         BindPlayerBorderCollider();
-        BindPools();
         BindLevelBuilder();
+        BindWallBorderCollider();
     }
 
-    private void BindPools()
-    {
-        Container.BindMemoryPool<Enemy, Enemy.Pool>().FromComponentInNewPrefab(EnemyToSpawn);
-        Container.BindMemoryPool<Obstacle, Obstacle.Pool>().FromComponentInNewPrefab(ObstacleToSpawn);
-        Container.BindMemoryPool<Wall, Wall.Pool>().FromComponentInNewPrefab(WallToSpawn);
-    }
     private void BindLevelBuilder()
     {
         LevelBuilder levelBuilderModel = Container.InstantiatePrefabForComponent<LevelBuilder>
-            (levelBuilder, Vector3.zero, Quaternion.identity, null);
+            (levelBuilder, Vector3.zero, Quaternion.identity, levelBuilderParentTransform);
         Container.Bind<LevelBuilder>().FromInstance(levelBuilderModel).AsSingle().NonLazy();
     }
 
     private void BindPlayerBorderCollider()
     {
         PlayerBorderCollider playerBorderColliderModel = Container.InstantiatePrefabForComponent<PlayerBorderCollider>
-            (playerBorderCollider, Vector3.zero, Quaternion.identity, null);
+            (playerBorderCollider, Vector3.zero, Quaternion.identity, levelBuilderParentTransform.GetChild(0));
         Container.Bind<PlayerBorderCollider>().FromInstance(playerBorderColliderModel).AsSingle().NonLazy();
+    }
+
+    private void BindWallBorderCollider()
+    {
+        WallBorderCollider wallBorderColliderModel = Container.InstantiatePrefabForComponent<WallBorderCollider>
+    (wallBorderCollider, Vector3.zero + Vector3.back * 3, Quaternion.identity, levelBuilderParentTransform.GetChild(0));
+        Container.Bind<WallBorderCollider>().FromInstance(wallBorderColliderModel).AsSingle().NonLazy();
     }
 
 }

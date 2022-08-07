@@ -9,9 +9,12 @@ public class PlayerHealthBarController : MonoBehaviour
     internal PlayerHealthBarModel Model { get => playerHealthBarModel ??= GetComponent<PlayerHealthBarModel>(); }
     PlayerHealthBarModel playerHealthBarModel;
 
-    internal void ReduceHealthPoints(int damage)
+    private void OnEnable()
     {
-        Model.PlayerHealthPoints -= damage;
-        View.FillTheHealthBar(Model.PlayerHealthPoints, Model.PlayerMaximumHealthPoints);
+        Model.PlayerHealthPoints.Subscribe(_ => View.
+            FillTheHealthBar(Model.PlayerHealthPoints.Value, Model.PlayerMaximumHealthPoints)).AddTo(this);
     }
+
+    internal void ReduceHealthPoints(int damage) => Model.PlayerHealthPoints.Value -= damage;
+
 }

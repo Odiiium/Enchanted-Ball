@@ -24,7 +24,11 @@ public class TurnChanger : MonoBehaviour
 
     private void MakeUnitsOnLevelMove()
     {
-        foreach (Enemy enemy in levelBuilder.enemyList) enemy.Jump();
-        foreach (Obstacle obstacle in levelBuilder.obstacleList) obstacle.Move();
+        foreach (Enemy enemy in levelBuilder.levelSpawner.enemySpawner.enemyList)
+            enemy.Jump();
+        foreach (Obstacle obstacle in levelBuilder.levelSpawner.obstacleSpawner.obstacleList)
+            obstacle.Move();
+        foreach (Wall obstacle in levelBuilder.levelSpawner.wallSpawner.wallList)
+            obstacle.Move();
     }
 }

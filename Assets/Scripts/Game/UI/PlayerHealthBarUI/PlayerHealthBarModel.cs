@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class PlayerHealthBarModel : MonoBehaviour
 {
-    internal float PlayerHealthPoints { get => playerHealthPoints; set => playerHealthPoints = value;}
-    float playerHealthPoints = 300;
+    internal FloatReactiveProperty PlayerHealthPoints = new FloatReactiveProperty(300);
     internal float PlayerMaximumHealthPoints { get => 300;}
+
 }

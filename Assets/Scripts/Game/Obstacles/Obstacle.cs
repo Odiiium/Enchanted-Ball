@@ -5,8 +5,12 @@ using Zenject;
 
 public class Obstacle : Structure
 {
-    internal Tile Tile { get => tile; set => tile = value; }
-    Tile tile;
+    public override void Die(Obstacle structure, List<Obstacle> structureList)
+    {
+        structureList.RemoveAt(structureList.IndexOf(structure));
+        Destroy(gameObject);
+    }
 
-    public class Pool : MemoryPool<Obstacle> { }
+    public class Factory : PlaceholderFactory<Obstacle> { }
+
 }
