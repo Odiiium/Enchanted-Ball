@@ -1,9 +1,7 @@
-﻿
-using Zenject;
+﻿using Zenject;
 
-public class DoubleDamageWall : Wall
+public class HealWall : Wall
 {
-
     public override void Accept(IStructureHitVisitor iHitVisitor, DiContainer diContainer)
     {
         iHitVisitor.Visit(this, diContainer);

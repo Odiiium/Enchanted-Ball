@@ -8,7 +8,7 @@ public class PlayerStateMachineInstaller : MonoInstaller
     public override void InstallBindings()
     {
         BindStateMachines();
-        BindFabrics();
+        BindFactories();
     }
 
     private void BindStateMachines()
@@ -16,7 +16,7 @@ public class PlayerStateMachineInstaller : MonoInstaller
         Container.Bind<PlayerStateMachine>().FromInstance(playerStateMachine).AsSingle().NonLazy();
         
     }
-    private void BindFabrics()
+    private void BindFactories()
     {
         Container.BindFactory<PlayerStateMachine, PlayerStateMachine.Factory>().AsSingle();
     }

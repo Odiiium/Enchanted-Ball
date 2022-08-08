@@ -10,11 +10,9 @@ internal class SpawnerInstaller : MonoInstaller
 
     [SerializeField] Transform spawnersParentTransform;
 
-    [SerializeField] List<Enemy> EnemyToSpawn;
-    Obstacle ObstacleToSpawn { get => obstacle ??= Resources.Load<Obstacle>("Obstacle/Cube"); }
-    Obstacle obstacle;
-    Wall WallToSpawn { get => wall ??= Resources.Load<Wall>("Walls/Wall"); }
-    Wall wall;
+    [SerializeField] List<Enemy> enemyToSpawn;
+    [SerializeField] List<Obstacle> obstaclesToSpawn;
+    [SerializeField] List<Wall> wallToSpawn;
 
     public override void InstallBindings()
     {
@@ -24,10 +22,12 @@ internal class SpawnerInstaller : MonoInstaller
 
     private void BindFactories()
     {
-        foreach (Enemy enemy in EnemyToSpawn) Container.
+        foreach (Enemy enemy in enemyToSpawn) Container.
                 BindFactory<Enemy, Enemy.Factory>().FromComponentInNewPrefab(enemy);
-        Container.BindFactory<Obstacle, Obstacle.Factory>().FromComponentInNewPrefab(ObstacleToSpawn);
-        Container.BindFactory<Wall, Wall.Factory>().FromComponentInNewPrefab(WallToSpawn);
+        foreach (Obstacle obstacle in obstaclesToSpawn) Container.
+                BindFactory<Obstacle, Obstacle.Factory>().FromComponentInNewPrefab(obstacle);
+        foreach (Wall wall in wallToSpawn) Container.
+                BindFactory<Wall, Wall.Factory>().FromComponentInNewPrefab(wall);
     }
     private void BindSpawners()
     {

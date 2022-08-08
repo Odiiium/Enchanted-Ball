@@ -706,7 +706,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548911585}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2149858, y: 2.19699, z: -84.6878}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -730,7 +730,7 @@ MonoBehaviour:
   wallSpawner: {fileID: 1157897837058803188, guid: 634c765c400cc5a428e70a0ea9346e9b, type: 3}
   levelSpawner: {fileID: 1475999571317891840, guid: ee287c43673ff474cb72f2572eef8165, type: 3}
   spawnersParentTransform: {fileID: 1861565256}
-  EnemyToSpawn:
+  enemyToSpawn:
   - {fileID: -7404665381307848970, guid: 595cfe4739977d747a3b1d81bf12ab98, type: 3}
   - {fileID: 728813532047308263, guid: 99e564f8d730871428d43eebe31a93f4, type: 3}
   - {fileID: -4380093989530355324, guid: 97f3662c90f08d6499611a9c12fc5f96, type: 3}
@@ -740,6 +740,13 @@ MonoBehaviour:
   - {fileID: 8606830823723283445, guid: 100f7714331892d4bbabd4a0d19284ea, type: 3}
   - {fileID: -6464416985222855173, guid: 298e7c24e18c2b649bcd5f9576cccba9, type: 3}
   - {fileID: 566780817020207407, guid: 031e42c317036294095d85334ebdde91, type: 3}
+  obstaclesToSpawn:
+  - {fileID: 3715831243075504305, guid: e931d460a9c2dec479a8cba0e6ad4cbe, type: 3}
+  wallToSpawn:
+  - {fileID: 2474369868905890697, guid: b522bb5f12032ab4292e2d2cf7c3511f, type: 3}
+  - {fileID: 2461023647482226610, guid: d1e469987309f334a866ceedb74fd90b, type: 3}
+  - {fileID: 9075799326248961267, guid: 84b0bdbe0898cb1428484d5cd53a21b7, type: 3}
+  - {fileID: 32191774733188779, guid: 7c4fb4e1eb5cd63439240323a999bdea, type: 3}
 --- !u!1 &1604564260
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UniRx;
 using UniRx.Triggers;
 using Zenject;
-internal class EnemySpawner : MonoBehaviour 
+public class EnemySpawner : MonoBehaviour 
 {
-    internal List<Enemy.Factory> enemyFactories
-        ;
+    internal List<Enemy.Factory> enemyFactories;
     internal List<Enemy> enemyList = new List<Enemy>();
     DiContainer diContainer;
     GridBuilder gridBuilder { get => diContainer.Resolve<GridBuilder>(); }
+    Player player { get => diContainer.Resolve<Player>(); }
 
     [Inject]
     void Construct(List<Enemy.Factory> _enemyFactories, DiContainer _diContainer)
@@ -43,7 +43,7 @@ internal class EnemySpawner : MonoBehaviour
     {
         enemyToSpawn.Model.Collider.OnCollisionEnterAsObservable().
             Subscribe(collision => 
-            { if (collision.gameObject.layer == 7) EnemyHealth(enemyToSpawn).Value -= 100; }
+            { if (collision.gameObject.layer == 7) EnemyHealth(enemyToSpawn).Value -= player.damage; }
             ).AddTo(enemyToSpawn);
     }
 

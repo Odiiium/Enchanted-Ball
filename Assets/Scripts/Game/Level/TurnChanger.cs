@@ -18,6 +18,7 @@ public class TurnChanger : MonoBehaviour
     internal void ChangeTurnToNew()
     {
         MakeUnitsOnLevelMove();
+        player.damage = 100;
         DOVirtual.DelayedCall(1, () =>
             player.playerStateMachine.ChangeState(new PlayerAimingState()));
     }

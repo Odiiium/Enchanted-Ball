@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1772941392413286517}
   - component: {fileID: 3561313585191332838}
   - component: {fileID: 416608119010868452}
-  - component: {fileID: 5984929676438661448}
+  - component: {fileID: 9075799326248961267}
   m_Layer: 3
-  m_Name: Wall
+  m_Name: IncreaseDamageWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5984929676438661448
+--- !u!114 &9075799326248961267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,6 +107,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1176923692066338549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54b8c19caf8ebbe44b53cba992aacb53, type: 3}
+  m_Script: {fileID: 11500000, guid: c71bb305bab220c43bd83b4ddb4b1853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

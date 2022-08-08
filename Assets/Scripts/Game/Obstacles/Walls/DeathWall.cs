@@ -1,9 +1,8 @@
 ﻿
 using Zenject;
 
-public class DoubleDamageWall : Wall
+public class DeathWall : Wall
 {
-
     public override void Accept(IStructureHitVisitor iHitVisitor, DiContainer diContainer)
     {
         iHitVisitor.Visit(this, diContainer);

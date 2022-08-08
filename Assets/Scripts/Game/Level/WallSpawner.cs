@@ -5,15 +5,15 @@ using Zenject;
 
 internal class WallSpawner : MonoBehaviour
 {
-    internal Wall.Factory wallFactory;
+    internal List<Wall.Factory> wallFactories;
     internal List<Wall> wallList = new List<Wall>();
     DiContainer diContainer;
     GridBuilder gridBuilder { get => diContainer.Resolve<GridBuilder>(); }
 
     [Inject]
-    void Construct(Wall.Factory _wallFactory, DiContainer _diContainer)
+    void Construct(List<Wall.Factory> _wallFactories, DiContainer _diContainer)
     {
-        wallFactory = _wallFactory;
+        wallFactories = _wallFactories;
         diContainer = _diContainer;
     }
     internal void BuildWalls()
@@ -32,15 +32,15 @@ internal class WallSpawner : MonoBehaviour
 
     void SpawnForwardAndBackWalls(int cellIndex)
     {
-        Wall forwardWallToSpawn = wallFactory.Create();
+        Wall forwardWallToSpawn = wallFactories[Random.Range(0, wallFactories.Count)].Create();
         forwardWallToSpawn.transform.position = new Vector3(cellIndex - (xScale() - 1) / 2, 0, gridBuilder.gridScale.yScale);
-        Wall backWallToSpawn = wallFactory.Create();
+        Wall backWallToSpawn = wallFactories[Random.Range(0, wallFactories.Count)].Create();
         backWallToSpawn.transform.position = new Vector3(cellIndex - (xScale() - 1) / 2, 0, -2);
     }
 
     void AddWallToList(out Wall wall)
     {
-        Wall wallToSpawn = wallFactory.Create();
+        Wall wallToSpawn = wallFactories[Random.Range(0, wallFactories.Count)].Create();
         wallList.Add(wallToSpawn);
         wall = wallToSpawn;
     }

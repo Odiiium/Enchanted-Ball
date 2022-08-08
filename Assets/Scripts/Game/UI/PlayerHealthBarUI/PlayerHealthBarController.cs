@@ -11,8 +11,8 @@ public class PlayerHealthBarController : MonoBehaviour
 
     private void OnEnable()
     {
-        Model.PlayerHealthPoints.Subscribe(_ => View.
-            FillTheHealthBar(Model.PlayerHealthPoints.Value, Model.PlayerMaximumHealthPoints)).AddTo(this);
+        Model.PlayerHealthPoints.Subscribe(value => View.
+            FillTheHealthBar(value, Model.PlayerMaximumHealthPoints)).AddTo(this);
     }
 
     internal void ReduceHealthPoints(int damage) => Model.PlayerHealthPoints.Value -= damage;
