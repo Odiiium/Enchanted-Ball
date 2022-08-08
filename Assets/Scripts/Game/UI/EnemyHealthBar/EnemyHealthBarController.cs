@@ -14,5 +14,4 @@ internal class EnemyHealthBarController : MonoBehaviour
             Subscribe(health=> StartCoroutine(View.FillHealthBarImage(health, Model.maxHealth))).
             AddTo(this);
     }
-
 }

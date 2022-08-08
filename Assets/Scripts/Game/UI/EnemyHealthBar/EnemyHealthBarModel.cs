@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System;
 using UniRx;
 internal class EnemyHealthBarModel : MonoBehaviour
 {

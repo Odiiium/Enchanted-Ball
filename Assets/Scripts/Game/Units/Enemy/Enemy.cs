@@ -5,33 +5,35 @@ using Zenject;
 
 public class Enemy : MonoBehaviour, IEnemy
 {
-    EnemyMovable enemyMovable = new EnemyMovable();
     DiContainer diContainer;
-    int damage = 50;
-
-    internal Collider Collider { get => enemyCollider ??= GetComponent<Collider>(); }
-    Collider enemyCollider;
+    internal EnemyModel Model { get => enemyModel ??= GetComponentInChildren<EnemyModel>(); set => enemyModel ??= GetComponentInChildren<EnemyModel>();}
+    EnemyModel enemyModel;
     PlayerHealthBarCanvas playerHealthBarCanvas { get => diContainer.Resolve<PlayerHealthBarCanvas>(); }
     LevelBuilder LevelBuilder { get => levelBuilder ??= diContainer.Resolve<LevelBuilder>(); }
     LevelBuilder levelBuilder;
-    internal EnemyHealthBarController HealthController { get => healthBarController ??= GetComponentInChildren<EnemyHealthBarController>(); }
-    EnemyHealthBarController healthBarController;
 
     [Inject]
     void Construct(DiContainer _diContainer) => diContainer = _diContainer;
+    void Start() => Model.EnemySettings.SetUpSettings
+        (Model.HealthController.Model.HealthPoints.Value, Model.HealthController.Model.maxHealth);
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 8) HealthController.Model.HealthPoints.Value = 0;
+        if (other.gameObject.layer == 8)
+        {
+            Attack();
+            Model.HealthController.Model.HealthPoints.Value = 0;
+        }
     }
 
     public void Die(Enemy enemy, List<Enemy> enemyList)
     {
-        Attack();
         enemyList.RemoveAt(enemyList.IndexOf(enemy));
         Destroy(gameObject);
     }
-    public void Attack() => playerHealthBarCanvas.Controller.ReduceHealthPoints(damage);
-    public void Jump() => enemyMovable.Move(transform);
+
+    public void Attack() => playerHealthBarCanvas.Controller.ReduceHealthPoints(Model.EnemySettings.damage);
+    public void Jump() => Model.EnemyMovable.Move(transform);
     public class Factory : PlaceholderFactory<Enemy> { }
+
 }

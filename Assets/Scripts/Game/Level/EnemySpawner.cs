@@ -5,20 +5,21 @@ using UniRx.Triggers;
 using Zenject;
 internal class EnemySpawner : MonoBehaviour 
 {
-    internal Enemy.Factory enemyFactory;
+    internal List<Enemy.Factory> enemyFactories
+        ;
     internal List<Enemy> enemyList = new List<Enemy>();
     DiContainer diContainer;
     GridBuilder gridBuilder { get => diContainer.Resolve<GridBuilder>(); }
 
     [Inject]
-    void Construct(Enemy.Factory _enemyFactory, DiContainer _diContainer)
+    void Construct(List<Enemy.Factory> _enemyFactories, DiContainer _diContainer)
     {
-        enemyFactory = _enemyFactory;
-        diContainer = _diContainer; 
+        enemyFactories = _enemyFactories;
+        diContainer = _diContainer;
     }
     internal void SpawnEnemy(int tileNumber)
     {
-        Enemy enemyToSpawn = enemyFactory.Create();
+        Enemy enemyToSpawn = enemyFactories[Random.Range(0, enemyFactories.Count)].Create();
         enemyList.Add(enemyToSpawn);
         enemyToSpawn.transform.position = gridBuilder.tileArray[tileNumber].transform.position;
         SubscribeToObservables(enemyToSpawn);
@@ -40,11 +41,11 @@ internal class EnemySpawner : MonoBehaviour
 
     void SubscribeToCollisionDetectionEvent(Enemy enemyToSpawn)
     {
-        enemyToSpawn.Collider.OnCollisionEnterAsObservable().
+        enemyToSpawn.Model.Collider.OnCollisionEnterAsObservable().
             Subscribe(collision => 
             { if (collision.gameObject.layer == 7) EnemyHealth(enemyToSpawn).Value -= 100; }
             ).AddTo(enemyToSpawn);
     }
 
-    private FloatReactiveProperty EnemyHealth(Enemy enemyToSpawn) => enemyToSpawn.HealthController.Model.HealthPoints;
+    private FloatReactiveProperty EnemyHealth(Enemy enemyToSpawn) => enemyToSpawn.Model.HealthController.Model.HealthPoints;
 }

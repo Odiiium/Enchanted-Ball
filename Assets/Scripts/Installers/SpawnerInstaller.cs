@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using Zenject;
-
 internal class SpawnerInstaller : MonoInstaller
 {
     [SerializeField] EnemySpawner enemySpawner;
@@ -10,8 +10,7 @@ internal class SpawnerInstaller : MonoInstaller
 
     [SerializeField] Transform spawnersParentTransform;
 
-    Enemy EnemyToSpawn { get => enemy ??= Resources.Load<Enemy>("Enemy/NyanSlime"); }
-    Enemy enemy;
+    [SerializeField] List<Enemy> EnemyToSpawn;
     Obstacle ObstacleToSpawn { get => obstacle ??= Resources.Load<Obstacle>("Obstacle/Cube"); }
     Obstacle obstacle;
     Wall WallToSpawn { get => wall ??= Resources.Load<Wall>("Walls/Wall"); }
@@ -25,7 +24,8 @@ internal class SpawnerInstaller : MonoInstaller
 
     private void BindFactories()
     {
-        Container.BindFactory<Enemy, Enemy.Factory>().FromComponentInNewPrefab(EnemyToSpawn);
+        foreach (Enemy enemy in EnemyToSpawn) Container.
+                BindFactory<Enemy, Enemy.Factory>().FromComponentInNewPrefab(enemy);
         Container.BindFactory<Obstacle, Obstacle.Factory>().FromComponentInNewPrefab(ObstacleToSpawn);
         Container.BindFactory<Wall, Wall.Factory>().FromComponentInNewPrefab(WallToSpawn);
     }
