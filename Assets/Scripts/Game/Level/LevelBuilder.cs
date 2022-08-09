@@ -16,20 +16,33 @@ public class LevelBuilder : MonoBehaviour
         levelSpawner = _levelSpawner;
     }
 
-    private void Start()
-    {
-        BuildALevel();
-    }
+    private void Start() => BuildALevel();
 
     void BuildALevel()
     {
         levelSpawner.wallSpawner.BuildWalls();
-        for (int i = gridBuilder.gridScale.xScale * 4; i < gridBuilder.tileArray.Count; i++)
+        for (int i = xScale() * 4; i < tileCount(); i++)
         {
             var randomNumber = Random.Range(0, 20);
             if (randomNumber < 3) levelSpawner.enemySpawner.SpawnEnemy(i);
             else if (randomNumber >= 3 && randomNumber < 5) levelSpawner.obstacleSpawner.SpawnObstacle(i);
         }
     }
+
+    internal void BuildANewPartOfLevel()
+    {
+        for (int i = xScale() * (yScale() + 1);
+            i < tileCount(); i++)
+        {
+            levelSpawner.wallSpawner.SpawnSideWalls(i);
+            var randomNumber = Random.Range(0, 20);
+            if (randomNumber < 3) levelSpawner.enemySpawner.SpawnEnemy(i);
+            else if (randomNumber >= 3 && randomNumber < 5) levelSpawner.obstacleSpawner.SpawnObstacle(i);
+        }
+    }
+
+    private int xScale() => gridBuilder.gridScale.xScale;
+    private int yScale() => gridBuilder.gridScale.yScale;
+    private int tileCount() => gridBuilder.tileArray.Count;
 }
 

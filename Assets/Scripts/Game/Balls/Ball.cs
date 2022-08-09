@@ -29,15 +29,12 @@ public abstract class Ball : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.TryGetComponent(out Structure structure))
-        {
-            CreateCollision(structure, diContainer);
-        }
+        if (collision.gameObject.TryGetComponent(out Structure structure)) CreateCollision(structure, diContainer);
     }
 
     internal void MoveToShotPoint() => BallMovable.Move(player.transform);
 
-    private void SubscribeToDetectCollisions() => collisionsCount.Subscribe(_ => { if (collisionsCount.Value >= 4) EndBallLife(); }).AddTo(this);
+    private void SubscribeToDetectCollisions() => collisionsCount.Subscribe(value => { if (value >= 4) EndBallLife(); }).AddTo(this);
 
     private void EndBallLife()
     {

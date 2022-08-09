@@ -24,7 +24,7 @@ internal class WallSpawner : MonoBehaviour
             SpawnForwardAndBackWalls(i);
     }
 
-    void SpawnSideWalls(int tileNumber)
+    internal void SpawnSideWalls(int tileNumber)
     {
         if (tileNumber % xScale() == 0) SetUpInitializeWallSettings(tileNumber, Vector3.left);
         if (tileNumber % xScale() == xScale() - 1) SetUpInitializeWallSettings(tileNumber, Vector3.right);
@@ -37,20 +37,19 @@ internal class WallSpawner : MonoBehaviour
         Wall backWallToSpawn = wallFactories[Random.Range(0, wallFactories.Count)].Create();
         backWallToSpawn.transform.position = new Vector3(cellIndex - (xScale() - 1) / 2, 0, -2);
     }
-
-    void AddWallToList(out Wall wall)
-    {
-        Wall wallToSpawn = wallFactories[Random.Range(0, wallFactories.Count)].Create();
-        wallList.Add(wallToSpawn);
-        wall = wallToSpawn;
-    }
-
     void SetUpInitializeWallSettings(int tileNumber, Vector3 offset)
     {
         AddWallToList(out Wall wallToSpawn);
         wallToSpawn.transform.position = gridBuilder.tileArray[tileNumber].transform.position + offset;
         wallToSpawn.HealthPoints.Where(_ => wallToSpawn.HealthPoints.Value <= 0).
             Subscribe(_ => wallToSpawn.Die(wallToSpawn, wallList)).AddTo(wallToSpawn);
+    }
+
+    void AddWallToList(out Wall wall)
+    {
+        Wall wallToSpawn = wallFactories[Random.Range(0, wallFactories.Count)].Create();
+        wallList.Add(wallToSpawn);
+        wall = wallToSpawn;
     }
 
     private int xScale() => gridBuilder.gridScale.xScale;

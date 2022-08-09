@@ -7,6 +7,7 @@ public class TurnChanger : MonoBehaviour
 {
     LevelBuilder levelBuilder;
     Player player;
+    internal IntReactiveProperty CurrentTurn = new IntReactiveProperty(1);
 
     [Inject]
     void Costruct(LevelBuilder _levelBuilder, Player _player)
@@ -18,9 +19,10 @@ public class TurnChanger : MonoBehaviour
     internal void ChangeTurnToNew()
     {
         MakeUnitsOnLevelMove();
-        player.damage = 100;
-        DOVirtual.DelayedCall(1, () =>
-            player.playerStateMachine.ChangeState(new PlayerAimingState()));
+        SetPlayerDamageAsDefault();
+        CurrentTurn.Value++;
+        levelBuilder.BuildANewPartOfLevel();
+        ChangeStateAfterDelay(1);
     }
 
     private void MakeUnitsOnLevelMove()
@@ -32,4 +34,9 @@ public class TurnChanger : MonoBehaviour
         foreach (Wall obstacle in levelBuilder.levelSpawner.wallSpawner.wallList)
             obstacle.Move();
     }
+
+    private void SetPlayerDamageAsDefault() => player.damage = 100;
+    private void ChangeStateAfterDelay(int delay) => DOVirtual.DelayedCall(delay, () => player.playerStateMachine.ChangeState(new PlayerAimingState()));
+
+
 }
