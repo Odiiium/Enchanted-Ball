@@ -20,7 +20,7 @@ internal class EnemyObservable
             Subscribe(_ =>
             {
                 enemyToSpawn.Die(enemyToSpawn, enemyList);
-                coinSpawner.SpawnCoin(enemyToSpawn.transform.position);
+                coinSpawner.SpawnCoins(enemyToSpawn.transform.position);
             }).
             AddTo(enemyToSpawn);
     }
