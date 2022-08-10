@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using UniRx;
 using Zenject;
+using DG.Tweening;
+using UnityEngine;
 using UniRx.Triggers;
-
 internal class EnemyObservable
 {
     internal void SubscribeToObservables(Enemy enemyToSpawn, List<Enemy> enemyList, DiContainer diContainer)
@@ -29,7 +30,13 @@ internal class EnemyObservable
     {
         enemyToSpawn.Model.Collider.OnCollisionEnterAsObservable().
             Subscribe(collision =>
-            { if (collision.gameObject.layer == 7) EnemyHealth(enemyToSpawn).Value -= player.damage; }
+            {
+                if (collision.gameObject.layer == 7)
+                { 
+                    EnemyHealth(enemyToSpawn).Value -= player.damage;
+                    enemyToSpawn.transform.DOShakeScale(1, new Vector3(.25f, .25f, .25f), 4, 50);
+                }
+            }
             ).AddTo(enemyToSpawn);
     }
 
