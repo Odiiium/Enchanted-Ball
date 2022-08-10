@@ -3,6 +3,7 @@ using UnityEngine;
 using Zenject;
 internal class SpawnerInstaller : MonoInstaller
 {
+    [SerializeField] CoinSpawner coinSpawner;
     [SerializeField] EnemySpawner enemySpawner;
     [SerializeField] ObstacleSpawner obstacleSpawner;
     [SerializeField] WallSpawner wallSpawner;
@@ -10,6 +11,7 @@ internal class SpawnerInstaller : MonoInstaller
 
     [SerializeField] Transform spawnersParentTransform;
 
+    [SerializeField] Coin coin;
     [SerializeField] List<Enemy> enemyToSpawn;
     [SerializeField] List<Obstacle> obstaclesToSpawn;
     [SerializeField] List<Wall> wallToSpawn;
@@ -22,6 +24,8 @@ internal class SpawnerInstaller : MonoInstaller
 
     private void BindFactories()
     {
+        Container.BindFactory<Coin, Coin.Factory>().FromComponentInNewPrefab(coin);
+
         foreach (Enemy enemy in enemyToSpawn) Container.
                 BindFactory<Enemy, Enemy.Factory>().FromComponentInNewPrefab(enemy);
         foreach (Obstacle obstacle in obstaclesToSpawn) Container.
@@ -31,6 +35,7 @@ internal class SpawnerInstaller : MonoInstaller
     }
     private void BindSpawners()
     {
+        BindCoinSpawner();
         BindEnemySpawner();
         BindObstacleSpawner(); 
         BindWallsSpawner();
@@ -62,6 +67,13 @@ internal class SpawnerInstaller : MonoInstaller
         LevelSpawner levelSpawnerModel = Container.InstantiatePrefabForComponent<LevelSpawner>
             (levelSpawner, Vector3.zero, Quaternion.identity, spawnersParentTransform);
         Container.Bind<LevelSpawner>().FromInstance(levelSpawnerModel).AsSingle().NonLazy();
+    }
+
+    private void BindCoinSpawner()
+    {
+        CoinSpawner coinSpawnerModel = Container.InstantiatePrefabForComponent<CoinSpawner>
+            (coinSpawner, Vector3.zero, Quaternion.identity, spawnersParentTransform);
+        Container.Bind<CoinSpawner>().FromInstance(coinSpawnerModel).AsSingle().NonLazy();
     }
 }
 

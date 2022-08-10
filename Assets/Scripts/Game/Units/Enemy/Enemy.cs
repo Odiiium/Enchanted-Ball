@@ -17,15 +17,6 @@ public class Enemy : MonoBehaviour, IEnemy
     void Start() => Model.EnemySettings.SetUpSettings
         (Model.HealthController.Model.HealthPoints.Value, Model.HealthController.Model.maxHealth);
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == 8)
-        {
-            Attack();
-            Model.HealthController.Model.HealthPoints.Value = 0;
-        }
-    }
-
     public void Die(Enemy enemy, List<Enemy> enemyList)
     {
         enemyList.RemoveAt(enemyList.IndexOf(enemy));
