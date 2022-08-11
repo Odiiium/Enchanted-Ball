@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 4332359570517229115}
   - component: {fileID: -119989563104274080}
   m_Layer: 6
-  m_Name: RatSlime
+  m_Name: RabbitSlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -367,8 +367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a195cdd15ec806a4ab94f8fbc9d933fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 400
-  damage: 70
+  healthPoints: 300
+  damage: 40
 --- !u!1 &8794483868021103565
 GameObject:
   m_ObjectHideFlags: 0

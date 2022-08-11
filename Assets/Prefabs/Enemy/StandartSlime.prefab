@@ -399,8 +399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a195cdd15ec806a4ab94f8fbc9d933fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 300
-  damage: 35
+  healthPoints: 240
+  damage: 25
 --- !u!1001 &5076670898752462593
 PrefabInstance:
   m_ObjectHideFlags: 0
