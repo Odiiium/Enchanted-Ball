@@ -6,6 +6,8 @@ using Zenject;
 
 public abstract class Ball : MonoBehaviour
 {
+    FloatReactiveProperty timeWithoutCollisions = new FloatReactiveProperty(0);
+
     StructureHitProvider hitProvider = new StructureHitProvider();
     TurnChanger turnChanger;
     Player player;
@@ -26,15 +28,32 @@ public abstract class Ball : MonoBehaviour
     {
         collisionsCount.Value = 0;
         SubscribeToDetectCollisions();
+        SubscribeToDestroyWhenNotObserveAnyCollisions();
     }
+
+    void Update() => timeWithoutCollisions.Value += Time.deltaTime;
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.TryGetComponent(out Structure structure)) CreateCollision(structure, diContainer);
+        if (collision.gameObject.TryGetComponent(out Structure structure))
+        {
+            CreateCollision(structure, diContainer);
+            DoDefaultOnDetectAnyCollision();
+        }
+        else if (collision.gameObject.TryGetComponent(out Enemy enemy)) DoDefaultOnDetectAnyCollision();
     }
 
     internal void MoveToShotPoint() => BallMovable.Move(player.transform);
 
-    private void SubscribeToDetectCollisions() => collisionsCount.Subscribe(value => { if (value >= 4) EndBallLife(); }).AddTo(this);
+    private void SubscribeToDetectCollisions() => collisionsCount.Subscribe(value => { if (value >= 6) EndBallLife(); }).AddTo(this);
+    private void SubscribeToDestroyWhenNotObserveAnyCollisions() => timeWithoutCollisions.Subscribe
+        (value => { if (value > 3) Destroy(gameObject); }).AddTo(this);
+
+    private void DoDefaultOnDetectAnyCollision()
+    {
+        BallMovable.RigidBody.velocity *= 1.06f;
+        timeWithoutCollisions.Value = 0;
+    }
 
     private void EndBallLife()
     {

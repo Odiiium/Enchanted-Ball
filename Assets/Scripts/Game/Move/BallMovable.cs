@@ -4,7 +4,7 @@ using Zenject;
 public class BallMovable : MonoBehaviour , IMovable
 {
     AimRay aimRay;
-    Rigidbody RigidBody { get => rigidBody ??= gameObject.GetComponent<Rigidbody>(); }
+    internal Rigidbody RigidBody { get => rigidBody ??= gameObject.GetComponent<Rigidbody>(); }
     Rigidbody rigidBody;
 
     [Inject]

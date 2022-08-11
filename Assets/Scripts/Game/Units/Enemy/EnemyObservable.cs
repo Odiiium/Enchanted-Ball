@@ -34,7 +34,7 @@ internal class EnemyObservable
                 if (collision.gameObject.layer == 7)
                 { 
                     EnemyHealth(enemyToSpawn).Value -= player.damage;
-                    enemyToSpawn.transform.DOShakeScale(1, new Vector3(.25f, .25f, .25f), 4, 50);
+                    enemyToSpawn.transform.DOShakeScale(1, Vector3.one * .25f, 4, 50);
                 }
             }
             ).AddTo(enemyToSpawn);
