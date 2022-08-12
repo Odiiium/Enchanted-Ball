@@ -6,12 +6,12 @@ using Zenject;
 
 public abstract class Ball : MonoBehaviour
 {
-    FloatReactiveProperty timeWithoutCollisions = new FloatReactiveProperty(0);
-
-    StructureHitProvider hitProvider = new StructureHitProvider();
     TurnChanger turnChanger;
     Player player;
     DiContainer diContainer;
+
+    StructureHitProvider hitProvider = new StructureHitProvider();
+    FloatReactiveProperty timeWithoutCollisions = new FloatReactiveProperty(0);
     ReactiveProperty<int> collisionsCount = new ReactiveProperty<int>();
     internal BallMovable BallMovable { get => ballMovable ??= GetComponent<BallMovable>(); }
     BallMovable ballMovable;
@@ -47,7 +47,7 @@ public abstract class Ball : MonoBehaviour
 
     private void SubscribeToDetectCollisions() => collisionsCount.Subscribe(value => { if (value >= 6) EndBallLife(); }).AddTo(this);
     private void SubscribeToDestroyWhenNotObserveAnyCollisions() => timeWithoutCollisions.Subscribe
-        (value => { if (value > 3) Destroy(gameObject); }).AddTo(this);
+        (value => { if (value > 3) EndBallLife(); }).AddTo(this);
 
     private void DoDefaultOnDetectAnyCollision()
     {
