@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-internal class MusicSlider
+internal class MusicSlider : MonoBehaviour
 {
 
 }
