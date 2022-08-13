@@ -15,4 +15,6 @@ internal class ShopUIView : MonoBehaviour
     ShopBackToMenuButton shopBackToMenuButton;
     internal TextMeshProUGUI BallNameText { get => ballNameText ??= GetComponentInChildren<TextMeshProUGUI>(); }
     TextMeshProUGUI ballNameText;
+    internal ShopPriceElement Price { get => shopPriceElement ??= GetComponentInChildren<ShopPriceElement>(); }
+    ShopPriceElement shopPriceElement;
 }

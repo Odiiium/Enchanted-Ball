@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 using Zenject;
 
 internal class ShopUIModel : MonoBehaviour
@@ -18,7 +17,8 @@ internal class ShopUIModel : MonoBehaviour
     MainMenuCanvas mainMenuCanvas;
     internal ShopCamera ShopCamera { get => shopCamera ??= diContainer.Resolve<ShopCamera>(); }
     ShopCamera shopCamera;
-
+    internal ShopDisplay Display { get => shopDisplay ??= GetComponentInChildren<ShopDisplay>(); }
+    ShopDisplay shopDisplay;
     [Inject]
     void Construct(DiContainer _diContainer) => diContainer = _diContainer;
 }
