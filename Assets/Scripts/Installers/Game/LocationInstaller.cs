@@ -7,7 +7,7 @@ public class LocationInstaller : MonoInstaller
     [SerializeField] Transform spawnPosition;
     [SerializeField] TurnChanger turnChanger;
 
-    Ball BallPrefab { get => ballPrefab ??= Resources.Load<Ball>("Balls/Sphere"); }
+    Ball BallPrefab { get => ballPrefab ??= Resources.Load<Ball>($"Balls/Ball{PlayerPrefs.GetInt("SelectedBallMaterial")}"); }
     Ball ballPrefab;
 
     public override void InstallBindings()

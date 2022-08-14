@@ -419,14 +419,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballMaterialArray:
+  - {fileID: 2100000, guid: 66fa87935fcce694db5dda10752555a2, type: 2}
+  - {fileID: 2100000, guid: c95090bfe2535664092450394f353450, type: 2}
+  - {fileID: 2100000, guid: 654338a2214ed794b9e0985d05d49b62, type: 2}
   - {fileID: 2100000, guid: 7c99fec15183f0c4db321bdf3fb641f2, type: 2}
-  - {fileID: 2100000, guid: fbf232e6ed877094e8f94b81a2e1fadc, type: 2}
-  - {fileID: 2100000, guid: b1ca011c5f92d4fd4b5aeac44fd607c6, type: 2}
-  ballPrice: 3200000064000000c8000000
+  - {fileID: 2100000, guid: 3f01ac342098d084c908cb21f04de87c, type: 2}
+  - {fileID: 2100000, guid: 1aa32906a1fca6646b84297564444cec, type: 2}
+  ballPrice: 0000000064000000c800000090010000bc020000e8030000
   ballNames:
-  - Standart Ball
-  - Blue Ball
-  - Third Ball
+  - Standart
+  - Smoky
+  - Pallete
+  - Purple Flame
+  - Water
+  - Eye
 --- !u!114 &5925052849341199570
 MonoBehaviour:
   m_ObjectHideFlags: 0
