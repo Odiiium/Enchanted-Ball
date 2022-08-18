@@ -20,6 +20,7 @@ public class LevelBuilder : MonoBehaviour
 
     void BuildALevel()
     {
+        BuildEnvironment();
         levelSpawner.wallSpawner.BuildWalls();
         for (int i = xScale() * 4; i < tileCount(); i++)
         {
@@ -39,6 +40,12 @@ public class LevelBuilder : MonoBehaviour
             if (randomNumber < 3) levelSpawner.enemySpawner.SpawnEnemy(i);
             else if (randomNumber >= 3 && randomNumber < 5) levelSpawner.obstacleSpawner.SpawnObstacle(i);
         }
+    }
+
+    private void BuildEnvironment()
+    {
+        levelSpawner.environmentSpawner.SpawnEnvironment(Vector3.zero);
+        levelSpawner.environmentSpawner.SpawnEnvironment(Vector3.forward * 12);
     }
 
     private int xScale() => gridBuilder.gridScale.xScale;

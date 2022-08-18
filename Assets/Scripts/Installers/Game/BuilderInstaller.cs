@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Zenject;
 
 public class BuilderInstaller : MonoInstaller
@@ -6,6 +7,7 @@ public class BuilderInstaller : MonoInstaller
     [SerializeField] LevelBuilder levelBuilder;
     [SerializeField] PlayerBorderCollider playerBorderCollider;
     [SerializeField] WallBorderCollider wallBorderCollider;
+    [SerializeField] EnvironmentBorder environmentBorderCollider;
 
     [SerializeField] Transform levelBuilderParentTransform;
 
@@ -14,6 +16,14 @@ public class BuilderInstaller : MonoInstaller
         BindPlayerBorderCollider();
         BindLevelBuilder();
         BindWallBorderCollider();
+        BindEnvironmentBorder();
+    }
+
+    private void BindEnvironmentBorder()
+    {
+        EnvironmentBorder environmentBorderModel = Container.InstantiatePrefabForComponent<EnvironmentBorder>
+            (environmentBorderCollider, Vector3.forward * -12, Quaternion.identity, null);
+        Container.Bind<EnvironmentBorder>().FromInstance(environmentBorderModel).AsSingle().NonLazy();
     }
 
     private void BindLevelBuilder()

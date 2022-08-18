@@ -8,6 +8,7 @@ internal class SpawnerInstaller : MonoInstaller
     [SerializeField] ObstacleSpawner obstacleSpawner;
     [SerializeField] WallSpawner wallSpawner;
     [SerializeField] LevelSpawner levelSpawner;
+    [SerializeField] EnvironmentSpawner environmentSpawner;
 
     [SerializeField] Transform spawnersParentTransform;
 
@@ -15,6 +16,7 @@ internal class SpawnerInstaller : MonoInstaller
     [SerializeField] List<Enemy> enemyToSpawn;
     [SerializeField] List<Obstacle> obstaclesToSpawn;
     [SerializeField] List<Wall> wallToSpawn;
+    [SerializeField] List<Environment> environmentToSpawn;
 
     public override void InstallBindings()
     {
@@ -32,9 +34,12 @@ internal class SpawnerInstaller : MonoInstaller
                 BindFactory<Obstacle, Obstacle.Factory>().FromComponentInNewPrefab(obstacle);
         foreach (Wall wall in wallToSpawn) Container.
                 BindFactory<Wall, Wall.Factory>().FromComponentInNewPrefab(wall);
+        foreach (Environment environment in environmentToSpawn) Container.
+                BindFactory<Environment, Environment.Factory>().FromComponentInNewPrefab(environment);
     }
     private void BindSpawners()
     {
+        BindEnvironmentSpawner();
         BindCoinSpawner();
         BindEnemySpawner();
         BindObstacleSpawner(); 
@@ -74,6 +79,13 @@ internal class SpawnerInstaller : MonoInstaller
         CoinSpawner coinSpawnerModel = Container.InstantiatePrefabForComponent<CoinSpawner>
             (coinSpawner, Vector3.zero, Quaternion.identity, spawnersParentTransform);
         Container.Bind<CoinSpawner>().FromInstance(coinSpawnerModel).AsSingle().NonLazy();
+    }
+
+    private void BindEnvironmentSpawner()
+    {
+        EnvironmentSpawner environmentSpawnerModel = Container.InstantiatePrefabForComponent<EnvironmentSpawner>
+            (environmentSpawner, Vector3.zero, Quaternion.identity, spawnersParentTransform);
+        Container.Bind<EnvironmentSpawner>().FromInstance(environmentSpawnerModel).AsSingle().NonLazy();
     }
 }
 

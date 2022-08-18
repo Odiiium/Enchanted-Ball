@@ -33,6 +33,8 @@ public class TurnChanger : MonoBehaviour
             obstacle.Move();
         foreach (Wall obstacle in levelBuilder.levelSpawner.wallSpawner.wallList)
             obstacle.Move();
+        foreach (Environment environment in levelBuilder.levelSpawner.environmentSpawner.environmentList)
+            environment.Move();
     }
 
     private void SetPlayerDamageAsDefault() => player.damage = 100;

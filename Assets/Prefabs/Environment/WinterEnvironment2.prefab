@@ -9,7 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 619951130316730973}
-  m_Layer: 0
+  - component: {fileID: -5546353121742922083}
+  - component: {fileID: 6586293515428337068}
+  - component: {fileID: 5092890289389180984}
+  m_Layer: 10
   m_Name: WinterEnvironment2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619951130316730972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.6898808, y: 2.8258247, z: 0.48396546}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -73,6 +76,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &-5546353121742922083
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619951130316730972}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19, y: 5, z: 12}
+  m_Center: {x: 0, y: 2, z: 5.5}
+--- !u!114 &6586293515428337068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619951130316730972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d188ed18ddd944fa6d22d776ba55e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &5092890289389180984
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619951130316730972}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &619951129458532820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98,15 +142,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3027191
+      value: -4.9935994
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.2208247
+      value: 0.6029999
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.2320347
+      value: 3.724
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalRotation.w
@@ -140,6 +184,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowPile (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 9072473727846509251, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
 --- !u!4 &1430743103429691046 stripped
@@ -158,6 +206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowCorner_v2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5190812390561318646, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -172,15 +224,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8211193
+      value: -5.5119996
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.2868247
+      value: 0.53699994
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.1350346
+      value: 2.6269999
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -228,6 +280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowPile_v2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 744152071347772504, guid: e4493422f2ee2274c886b783b4364538, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -238,15 +294,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.800119
+      value: -6.490999
       objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5458248
+      value: 1.2779999
       objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.7360344
+      value: 5.2279997
       objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_LocalRotation.w
@@ -294,6 +350,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowPile_v2
       objectReference: {fileID: 0}
+    - target: {fileID: 744152071347772504, guid: e4493422f2ee2274c886b783b4364538, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -312,15 +372,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.265119
+      value: -5.9559994
       objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1358247
+      value: 0.68799996
       objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.41296545
+      value: 0.07899985
       objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_LocalRotation.w
@@ -368,6 +428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterBarrel
       objectReference: {fileID: 0}
+    - target: {fileID: 1321102975, guid: 6bfdbfdfc7f8f5a4cb98436db660e656, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1321102978, guid: 6bfdbfdfc7f8f5a4cb98436db660e656, type: 3}
       propertyPath: m_RootOrder
       value: 37
@@ -386,15 +450,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1321102978, guid: 6bfdbfdfc7f8f5a4cb98436db660e656, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.897119
+      value: -6.5879993
       objectReference: {fileID: 0}
     - target: {fileID: 1321102978, guid: 6bfdbfdfc7f8f5a4cb98436db660e656, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3858247
+      value: 1.438
       objectReference: {fileID: 0}
     - target: {fileID: 1321102978, guid: 6bfdbfdfc7f8f5a4cb98436db660e656, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.7850347
+      value: 6.277
       objectReference: {fileID: 0}
     - target: {fileID: 1321102978, guid: 6bfdbfdfc7f8f5a4cb98436db660e656, type: 3}
       propertyPath: m_LocalRotation.w
@@ -442,6 +506,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterIceTreePineTall_x2 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 412543119, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -460,15 +528,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.41588
+      value: 7.7250004
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6458248
+      value: 1.1779999
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.0560346
+      value: 3.5479999
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -512,9 +580,61 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 619951130316730973}
     m_Modifications:
+    - target: {fileID: 62528169298727268, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 308630179688448656, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 620583353670849981, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 718452337726800673, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163484389610195495, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682358731354246786, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706832820232947849, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754581734803910610, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809595958853856418, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3144420545201341160, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
       propertyPath: m_Name
       value: WinterCatapult
+      objectReference: {fileID: 0}
+    - target: {fileID: 3144420545201341160, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109907020021440465, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665073584457577837, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460431675662000006, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6243620934023905089, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
       propertyPath: m_RootOrder
@@ -534,15 +654,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6243620934023905089, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.930119
+      value: -6.6209993
       objectReference: {fileID: 0}
     - target: {fileID: 6243620934023905089, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1358247
+      value: 1.688
       objectReference: {fileID: 0}
     - target: {fileID: 6243620934023905089, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.0360346
+      value: 7.528
       objectReference: {fileID: 0}
     - target: {fileID: 6243620934023905089, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
       propertyPath: m_LocalRotation.w
@@ -572,6 +692,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7388336098542981044, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ff7f927524cc8479317b762c98ce57, type: 3}
 --- !u!4 &6791232990412259864 stripped
@@ -589,6 +713,10 @@ PrefabInstance:
     - target: {fileID: 7821326694573142995, guid: 77960433296b2e94db1763ac885e8c70, type: 3}
       propertyPath: m_Name
       value: Shovel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7821326694573142995, guid: 77960433296b2e94db1763ac885e8c70, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8224922915749173525, guid: 77960433296b2e94db1763ac885e8c70, type: 3}
       propertyPath: m_RootOrder
@@ -608,15 +736,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8224922915749173525, guid: 77960433296b2e94db1763ac885e8c70, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1571193
+      value: -4.8479996
       objectReference: {fileID: 0}
     - target: {fileID: 8224922915749173525, guid: 77960433296b2e94db1763ac885e8c70, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0498247
+      value: 0.7739999
       objectReference: {fileID: 0}
     - target: {fileID: 8224922915749173525, guid: 77960433296b2e94db1763ac885e8c70, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.9130347
+      value: 2.405
       objectReference: {fileID: 0}
     - target: {fileID: 8224922915749173525, guid: 77960433296b2e94db1763ac885e8c70, type: 3}
       propertyPath: m_LocalRotation.w
@@ -664,6 +792,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowEnd_v2
       objectReference: {fileID: 0}
+    - target: {fileID: 619970360138697097, guid: 4ac3ee5d7ae8f0a4d9f5ea0fef730316, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2623934731200260291, guid: 4ac3ee5d7ae8f0a4d9f5ea0fef730316, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -682,15 +814,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2623934731200260291, guid: 4ac3ee5d7ae8f0a4d9f5ea0fef730316, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.454881
+      value: 4.7640004
       objectReference: {fileID: 0}
     - target: {fileID: 2623934731200260291, guid: 4ac3ee5d7ae8f0a4d9f5ea0fef730316, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1518247
+      value: 0.67199993
       objectReference: {fileID: 0}
     - target: {fileID: 2623934731200260291, guid: 4ac3ee5d7ae8f0a4d9f5ea0fef730316, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.1001344
+      value: 4.5920997
       objectReference: {fileID: 0}
     - target: {fileID: 2623934731200260291, guid: 4ac3ee5d7ae8f0a4d9f5ea0fef730316, type: 3}
       propertyPath: m_LocalRotation.w
@@ -738,6 +870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowCorner_v2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5190812390561318646, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -748,15 +884,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.950119
+      value: -6.6409993
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1238246
+      value: 0.70000005
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.846034
+      value: 10.337999
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -804,6 +940,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowCorner_v2
       objectReference: {fileID: 0}
+    - target: {fileID: 5190812390561318646, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -818,15 +958,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.298119
+      value: -5.9889994
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0998247
+      value: 0.724
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.7040346
+      value: 3.1959999
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -874,6 +1014,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterIceTreePineTall_x2 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 412543119, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -892,15 +1036,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.789881
+      value: 5.0990005
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3448248
+      value: 0.47899985
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.8660345
+      value: 6.358
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -948,6 +1092,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowPile_v2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 744152071347772504, guid: e4493422f2ee2274c886b783b4364538, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -966,15 +1114,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.660119
+      value: -7.3509994
       objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2758248
+      value: 1.5479999
       objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.306034
+      value: 8.798
       objectReference: {fileID: 0}
     - target: {fileID: 4883029666531477122, guid: e4493422f2ee2274c886b783b4364538, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1022,6 +1170,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowCorner_v2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5190812390561318646, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -1032,15 +1184,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.088119
+      value: -5.7789993
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1178248
+      value: 0.70599985
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.696034
+      value: 9.188
       objectReference: {fileID: 0}
     - target: {fileID: 6696098432768898795, guid: a9e0139c7a59db042b8124f5f8b634d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1088,6 +1240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterIceTreePineTall_x2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 412543119, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -1106,15 +1262,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.319881
+      value: 7.6290016
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3398248
+      value: 1.4839998
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.9660344
+      value: 5.4579997
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1162,6 +1318,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterIceTreePineTall_x2 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 412543119, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -1180,15 +1340,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.709881
+      value: 6.0190005
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3538247
+      value: 1.4699999
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.1260347
+      value: 4.618
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1236,6 +1396,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowLine
       objectReference: {fileID: 0}
+    - target: {fileID: 1814856224715947881, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -1246,15 +1410,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.818119
+      value: -5.5089993
       objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0848248
+      value: 0.73899984
       objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.494035
+      value: 4.986
       objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1302,6 +1466,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowLine_v2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3556337199902127376, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -1312,15 +1480,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.420881
+      value: 4.730001
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1858249
+      value: 0.6379998
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.717035
+      value: 5.209
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1368,21 +1536,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowLine_v2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3556337199902127376, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.48888
+      value: 4.798
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1858249
+      value: 0.6379998
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.158034
+      value: 8.65
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1429,6 +1601,10 @@ PrefabInstance:
     - target: {fileID: 1223755831774804360, guid: 9d4119a82d798434491732b4f606d177, type: 3}
       propertyPath: m_Name
       value: WinterGroundDirtSnow_v2 (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223755831774804360, guid: 9d4119a82d798434491732b4f606d177, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2629025236068104223, guid: 9d4119a82d798434491732b4f606d177, type: 3}
       propertyPath: m_RootOrder
@@ -1503,6 +1679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterIceTreePineTall_x2 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 412543119, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1521,15 +1701,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.01988
+      value: 8.329
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3448248
+      value: 0.47899985
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.046034
+      value: 8.538
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1577,21 +1757,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowLine_v2
       objectReference: {fileID: 0}
+    - target: {fileID: 3556337199902127376, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_RootOrder
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.48888
+      value: 4.798
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1858249
+      value: 0.6379998
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.261322
+      value: 6.7532873
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1638,6 +1822,10 @@ PrefabInstance:
     - target: {fileID: 1223755831774804360, guid: 9d4119a82d798434491732b4f606d177, type: 3}
       propertyPath: m_Name
       value: WinterGroundDirtSnow_v2 (60)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223755831774804360, guid: 9d4119a82d798434491732b4f606d177, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2629025236068104223, guid: 9d4119a82d798434491732b4f606d177, type: 3}
       propertyPath: m_RootOrder
@@ -1708,9 +1896,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 619951130316730973}
     m_Modifications:
+    - target: {fileID: 50886005796528682, guid: 2876e03279b43b748835fd4bfeb7b602, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4713955815358397886, guid: 2876e03279b43b748835fd4bfeb7b602, type: 3}
       propertyPath: m_Name
       value: WinterBrazier_v2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713955815358397886, guid: 2876e03279b43b748835fd4bfeb7b602, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5808892636469112120, guid: 2876e03279b43b748835fd4bfeb7b602, type: 3}
       propertyPath: m_Materials.Array.size
@@ -1736,6 +1932,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.29507
       objectReference: {fileID: 0}
+    - target: {fileID: 5933573641529080726, guid: 2876e03279b43b748835fd4bfeb7b602, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7630601576833591680, guid: 2876e03279b43b748835fd4bfeb7b602, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.292285
@@ -1755,6 +1955,10 @@ PrefabInstance:
     - target: {fileID: 7630601576833591680, guid: 2876e03279b43b748835fd4bfeb7b602, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.96148
+      objectReference: {fileID: 0}
+    - target: {fileID: 7635745153675403348, guid: 2876e03279b43b748835fd4bfeb7b602, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7723903080364739138, guid: 2876e03279b43b748835fd4bfeb7b602, type: 3}
       propertyPath: m_Materials.Array.size
@@ -1778,15 +1982,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8857502388574379257, guid: 2876e03279b43b748835fd4bfeb7b602, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.6101193
+      value: -5.3009996
       objectReference: {fileID: 0}
     - target: {fileID: 8857502388574379257, guid: 2876e03279b43b748835fd4bfeb7b602, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9988247
+      value: 0.8249999
       objectReference: {fileID: 0}
     - target: {fileID: 8857502388574379257, guid: 2876e03279b43b748835fd4bfeb7b602, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.176034
+      value: 10.667999
       objectReference: {fileID: 0}
     - target: {fileID: 8857502388574379257, guid: 2876e03279b43b748835fd4bfeb7b602, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1834,6 +2038,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterIceTreePineTall_x2 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 412543119, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1852,15 +2060,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.559881
+      value: 6.869001
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3448248
+      value: 0.47899985
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.976034
+      value: 10.468
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1908,6 +2116,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterTreeAppleTallG
       objectReference: {fileID: 0}
+    - target: {fileID: 1002279626, guid: e3a0371822a235a43a7f79bebddc742c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1002279629, guid: e3a0371822a235a43a7f79bebddc742c, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -1926,15 +2138,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1002279629, guid: e3a0371822a235a43a7f79bebddc742c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.140119
+      value: -5.8309994
       objectReference: {fileID: 0}
     - target: {fileID: 1002279629, guid: e3a0371822a235a43a7f79bebddc742c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3858247
+      value: 1.438
       objectReference: {fileID: 0}
     - target: {fileID: 1002279629, guid: e3a0371822a235a43a7f79bebddc742c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.4060347
+      value: 3.8979998
       objectReference: {fileID: 0}
     - target: {fileID: 1002279629, guid: e3a0371822a235a43a7f79bebddc742c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1982,6 +2194,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterIceTreePineTall_x2
       objectReference: {fileID: 0}
+    - target: {fileID: 412543119, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -2000,15 +2216,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.0601192
+      value: -6.7509995
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3358247
+      value: 1.4879999
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.586034
+      value: 10.077999
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2055,6 +2271,10 @@ PrefabInstance:
     - target: {fileID: 1223755831774804360, guid: 9d4119a82d798434491732b4f606d177, type: 3}
       propertyPath: m_Name
       value: WinterGroundDirtSnow_v2 (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223755831774804360, guid: 9d4119a82d798434491732b4f606d177, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2629025236068104223, guid: 9d4119a82d798434491732b4f606d177, type: 3}
       propertyPath: m_RootOrder
@@ -2143,15 +2363,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737587249140327450, guid: 7ea2dd0fb00473449b677259eba93ea2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2981191
+      value: -4.9889994
       objectReference: {fileID: 0}
     - target: {fileID: 1737587249140327450, guid: 7ea2dd0fb00473449b677259eba93ea2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3258247
+      value: 0.4979999
       objectReference: {fileID: 0}
     - target: {fileID: 1737587249140327450, guid: 7ea2dd0fb00473449b677259eba93ea2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.6150345
+      value: 1.1069999
       objectReference: {fileID: 0}
     - target: {fileID: 1737587249140327450, guid: 7ea2dd0fb00473449b677259eba93ea2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2185,6 +2405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterCubeMedium
       objectReference: {fileID: 0}
+    - target: {fileID: 6126129042946296385, guid: 7ea2dd0fb00473449b677259eba93ea2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ea2dd0fb00473449b677259eba93ea2, type: 3}
 --- !u!4 &1191101089402291796 stripped
@@ -2202,6 +2426,10 @@ PrefabInstance:
     - target: {fileID: 412543119, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_Name
       value: WinterIceTreePineTall_x2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 412543119, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_RootOrder
@@ -2221,15 +2449,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.91988
+      value: 8.229
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3498248
+      value: 1.4739999
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.0860345
+      value: 1.5779998
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2291,15 +2519,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.215881
+      value: 5.525001
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0713348
+      value: 0.7524898
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.436034
+      value: 10.9279995
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2333,6 +2561,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowPile (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 9072473727846509251, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
 --- !u!4 &1430743104654339654 stripped
@@ -2365,15 +2597,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.4708805
+      value: 5.78
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0838246
+      value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.7180347
+      value: 7.21
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2407,6 +2639,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowPile (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 9072473727846509251, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
 --- !u!4 &1430743104585268449 stripped
@@ -2421,6 +2657,142 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 619951130316730973}
     m_Modifications:
+    - target: {fileID: 129534343084743347, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 164721584615078173, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177089700216489482, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369707656322866447, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499919206029873864, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605102619250983874, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865465937890433972, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067528834086879508, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2362837354392205473, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544388288765467407, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053821128080251955, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3567243145953533107, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681481403169015244, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3802499566163526270, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914615388913161076, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278487839543187976, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039151062824346040, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074341362371445270, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712129059881813290, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014369061852220013, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211566609545813205, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337198550452248239, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563656556575922609, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616600199457029447, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792812776423392017, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970947789410980723, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146085121806717743, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653576889265833520, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910228027746878614, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314398543716440795, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8408400331627027817, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462556066668060435, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513765804850709526, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761053486233098253, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9104173931004194744, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -2439,15 +2811,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9104173931004194744, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.530119
+      value: -6.2209992
       objectReference: {fileID: 0}
     - target: {fileID: 9104173931004194744, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3658247
+      value: 0.45799994
       objectReference: {fileID: 0}
     - target: {fileID: 9104173931004194744, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.63603455
+      value: 1.1279998
       objectReference: {fileID: 0}
     - target: {fileID: 9104173931004194744, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2481,6 +2853,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterTower_v2_Blue
       objectReference: {fileID: 0}
+    - target: {fileID: 9104173931004687256, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175f85191409d0e4f8b838111f722a0b, type: 3}
 --- !u!4 &8557410697310644548 stripped
@@ -2498,6 +2874,10 @@ PrefabInstance:
     - target: {fileID: 412543119, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_Name
       value: WinterIceTreePineTall_x2 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 412543119, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_RootOrder
@@ -2517,15 +2897,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.812881
+      value: 5.122001
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3338246
+      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.33396545
+      value: 0.15799984
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2573,6 +2953,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterIceTreePineTall_x2 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 412543119, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2591,15 +2975,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.949881
+      value: 6.2590003
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3448248
+      value: 0.47899985
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.3860345
+      value: 7.878
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2661,15 +3045,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8031192
+      value: -5.4939995
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1968248
+      value: 0.62699986
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.207034
+      value: 8.698999
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2703,6 +3087,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowPile (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9072473727846509251, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
 --- !u!4 &1430743103846665245 stripped
@@ -2721,21 +3109,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowLine_v2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3556337199902127376, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.48888
+      value: 4.798
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1858249
+      value: 0.6379998
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.148034
+      value: 10.639999
       objectReference: {fileID: 0}
     - target: {fileID: 3580710957228733588, guid: 45f6d6314d0af6348abf3559815b3401, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2783,6 +3175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterIceTreePineTall_x2 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 412543119, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -2801,15 +3197,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.879881
+      value: 5.1890006
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3448248
+      value: 0.47899985
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.026034
+      value: 9.518
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2857,6 +3253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowLine (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1814856224715947881, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2867,15 +3267,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.818119
+      value: -5.5089993
       objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0848248
+      value: 0.73899984
       objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.0570345
+      value: 7.549
       objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2922,6 +3322,10 @@ PrefabInstance:
     - target: {fileID: 1223755831774804360, guid: 9d4119a82d798434491732b4f606d177, type: 3}
       propertyPath: m_Name
       value: WinterGroundDirtSnow_v2 (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223755831774804360, guid: 9d4119a82d798434491732b4f606d177, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2629025236068104223, guid: 9d4119a82d798434491732b4f606d177, type: 3}
       propertyPath: m_RootOrder
@@ -2996,6 +3400,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinterIceTreePineTall_x2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 412543119, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3014,15 +3422,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.839881
+      value: 6.1490006
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3758247
+      value: 1.448
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.0760345
+      value: 2.5679998
       objectReference: {fileID: 0}
     - target: {fileID: 412543122, guid: 16f049e2d9722d24986e310f91ff68c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3076,15 +3484,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.551058
+      value: 5.8601775
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1888247
+      value: 0.635
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.6450345
+      value: 1.1369998
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3117,6 +3525,10 @@ PrefabInstance:
     - target: {fileID: 9072473727846509251, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_Name
       value: SnowPile (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072473727846509251, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
@@ -3170,15 +3582,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3273518470864218960, guid: fd71260dcd88ab9439aa275ec32a14a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.6898808
+      value: -0.0009994507
       objectReference: {fileID: 0}
     - target: {fileID: 3273518470864218960, guid: fd71260dcd88ab9439aa275ec32a14a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8258247
+      value: -0.0020000935
       objectReference: {fileID: 0}
     - target: {fileID: 3273518470864218960, guid: fd71260dcd88ab9439aa275ec32a14a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.48396546
+      value: 0.007999837
       objectReference: {fileID: 0}
     - target: {fileID: 3273518470864218960, guid: fd71260dcd88ab9439aa275ec32a14a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3331,6 +3743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowLine (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1814856224715947881, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -3341,15 +3757,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.181881
+      value: 5.4910007
       objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1277947
+      value: 0.6960299
       objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.9260347
+      value: 2.418
       objectReference: {fileID: 0}
     - target: {fileID: 4050278802411658056, guid: 82436820a1fece5449e4c4cff4d30860, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3411,15 +3827,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.693119
+      value: -5.3839993
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1708248
+      value: 0.6529999
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.5150347
+      value: 4.007
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3453,6 +3869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowPile
       objectReference: {fileID: 0}
+    - target: {fileID: 9072473727846509251, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
 --- !u!4 &1430743104090737805 stripped
@@ -3481,15 +3901,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5601192
+      value: -5.2509995
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1968248
+      value: 0.62699986
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.776035
+      value: 6.268
       objectReference: {fileID: 0}
     - target: {fileID: 1963999351642400626, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3522,6 +3942,10 @@ PrefabInstance:
     - target: {fileID: 9072473727846509251, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
       propertyPath: m_Name
       value: SnowPile (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072473727846509251, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fef3e9dfbc9354e4c880f33ec0873b12, type: 3}
