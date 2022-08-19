@@ -228,8 +228,6 @@ GameObject:
   - component: {fileID: 3109666137237716994}
   - component: {fileID: 3588534744937726502}
   - component: {fileID: -7404665381307848970}
-  - component: {fileID: -1702531643349320115}
-  - component: {fileID: -4255929506643291961}
   m_Layer: 6
   m_Name: GrassSlime
   m_TagString: Untagged
@@ -276,35 +274,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae1bf1b4f64418f43b19bb872b898dec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-1702531643349320115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3109666137237716995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scriptableObjectInstallers: []
-  _monoInstallers: []
-  _installerPrefabs: []
-  _autoRun: 1
-  _kernel: {fileID: -4255929506643291961}
---- !u!114 &-4255929506643291961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3109666137237716995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c47912ae4e51a84d92f1acf689997c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3109666137313467580

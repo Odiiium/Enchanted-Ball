@@ -11,6 +11,4 @@ public class Obstacle : Structure
         Destroy(gameObject);
     }
 
-    public class Factory : PlaceholderFactory<Obstacle> { }
-
 }

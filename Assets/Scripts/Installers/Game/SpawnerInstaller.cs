@@ -14,11 +14,6 @@ internal class SpawnerInstaller : MonoInstaller
     [SerializeField] Transform spawnersParentTransform;
 
     [SerializeField] Coin coin;
-    [SerializeField] List<Enemy> enemyToSpawn;
-    [SerializeField] List<Obstacle> obstaclesToSpawn;
-    [SerializeField] List<Wall> wallToSpawn;
-    [SerializeField] List<Environment> environmentToSpawn;
-
     public override void InstallBindings()
     {
         BindFactories();
@@ -28,24 +23,12 @@ internal class SpawnerInstaller : MonoInstaller
     private void BindFactories()
     {
         Container.BindFactory<Coin, Coin.Factory>().FromComponentInNewPrefab(coin);
-
-        Container.BindFactory<EnemyFacade, EnemyFacade.Factory>().FromSubContainerResolve().
-            ByNewPrefabInstaller<EnemyInstaller>(ChooseEnemy);
-
-/*        foreach (Enemy enemy in enemyToSpawn) Container.
-                BindFactory<Enemy, Enemy.Factory>().FromComponentInNewPrefab(enemy);*/
-        foreach (Obstacle obstacle in obstaclesToSpawn) Container.
-                BindFactory<Obstacle, Obstacle.Factory>().FromComponentInNewPrefab(obstacle);
-        foreach (Wall wall in wallToSpawn) Container.
-                BindFactory<Wall, Wall.Factory>().FromComponentInNewPrefab(wall);
-        foreach (Environment environment in environmentToSpawn) Container. 
-                BindFactory<Environment, Environment.Factory>().FromComponentInNewPrefab(environment);
+        Container.Bind<EnemyFactory>().AsSingle();
+        Container.Bind<ObstacleFactory>().AsSingle();
+        Container.Bind<WallFactory>().AsSingle();
+        Container.Bind<EnvironmentFactory>().AsSingle();
     }
 
-    Enemy ChooseEnemy(InjectContext _)
-    {
-         return enemyToSpawn[Random.Range(0, enemyToSpawn.Count)];
-    }
     private void BindSpawners()
     {
         BindEnvironmentSpawner();

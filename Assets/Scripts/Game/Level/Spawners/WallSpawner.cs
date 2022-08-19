@@ -5,15 +5,16 @@ using Zenject;
 
 internal class WallSpawner : MonoBehaviour
 {
-    internal List<Wall.Factory> wallFactories;
-    internal List<Wall> wallList = new List<Wall>();
     DiContainer diContainer;
+    WallFactory wallFactory;
+    [SerializeField] internal List<Wall> walls;
+    internal List<Wall> wallList = new List<Wall>();
     GridBuilder gridBuilder { get => diContainer.Resolve<GridBuilder>(); }
 
     [Inject]
-    void Construct(List<Wall.Factory> _wallFactories, DiContainer _diContainer)
+    void Construct(WallFactory _wallFactory, DiContainer _diContainer)
     {
-        wallFactories = _wallFactories;
+        wallFactory = _wallFactory;
         diContainer = _diContainer;
     }
     internal void BuildWalls()
@@ -32,24 +33,25 @@ internal class WallSpawner : MonoBehaviour
 
     void SpawnForwardAndBackWalls(int cellIndex)
     {
-        Wall forwardWallToSpawn = wallFactories[Random.Range(0, wallFactories.Count)].Create();
-        forwardWallToSpawn.transform.position = new Vector3(cellIndex - (xScale() - 1) / 2, 0, gridBuilder.gridScale.yScale);
-        Wall backWallToSpawn = wallFactories[Random.Range(0, wallFactories.Count)].Create();
-        backWallToSpawn.transform.position = new Vector3(cellIndex - (xScale() - 1) / 2, 0, -2);
+        wallFactory.Create
+            (walls[Random.Range(0, walls.Count)], new Vector3(cellIndex - (xScale() - 1) / 2, 0, gridBuilder.gridScale.yScale));
+        wallFactory.Create
+            (walls[Random.Range(0, walls.Count)], new Vector3(cellIndex - (xScale() - 1) / 2, 0, -2));
     }
     void SetUpInitializeWallSettings(int tileNumber, Vector3 offset)
     {
-        AddWallToList(out Wall wallToSpawn);
-        wallToSpawn.transform.position = gridBuilder.tileArray[tileNumber].transform.position + offset;
-        wallToSpawn.HealthPoints.Where(_ => wallToSpawn.HealthPoints.Value <= 0).
-            Subscribe(_ => wallToSpawn.Die(wallToSpawn, wallList)).AddTo(wallToSpawn);
+        Vector3 positionToSpawn = gridBuilder.tileArray[tileNumber].transform.position + offset;
+
+        Wall wallToSpawn = AddWallToList(positionToSpawn);
+            wallToSpawn.HealthPoints.Where(value => value <= 0).
+                Subscribe(_ => wallToSpawn.Die(wallToSpawn, wallList)).AddTo(wallToSpawn);
     }
 
-    void AddWallToList(out Wall wall)
+    Wall AddWallToList(Vector3 position)
     {
-        Wall wallToSpawn = wallFactories[Random.Range(0, wallFactories.Count)].Create();
+        Wall wallToSpawn = wallFactory.Create(walls[Random.Range(0, walls.Count)], position);
         wallList.Add(wallToSpawn);
-        wall = wallToSpawn;
+        return wallToSpawn;
     }
 
     private int xScale() => gridBuilder.gridScale.xScale;

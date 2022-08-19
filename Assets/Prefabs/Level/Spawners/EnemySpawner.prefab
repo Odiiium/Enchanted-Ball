@@ -44,3 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef185bf799f6974195031fccbe724bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: -7404665381307848970, guid: 595cfe4739977d747a3b1d81bf12ab98, type: 3}
+  - {fileID: 728813532047308263, guid: 99e564f8d730871428d43eebe31a93f4, type: 3}
+  - {fileID: -4380093989530355324, guid: 97f3662c90f08d6499611a9c12fc5f96, type: 3}
+  - {fileID: -2797267989631134641, guid: bd952021e5c400c44a8187f223dbb645, type: 3}
+  - {fileID: -5056663907735360718, guid: c1cb297216e1c9b4caed154ca7d3763b, type: 3}
+  - {fileID: -119989563104274080, guid: 3557f5f789690884d948e650e2c042e5, type: 3}
+  - {fileID: 8606830823723283445, guid: 100f7714331892d4bbabd4a0d19284ea, type: 3}
+  - {fileID: -6464416985222855173, guid: 298e7c24e18c2b649bcd5f9576cccba9, type: 3}
+  - {fileID: 566780817020207407, guid: 031e42c317036294095d85334ebdde91, type: 3}

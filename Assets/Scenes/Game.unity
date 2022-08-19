@@ -814,30 +814,6 @@ MonoBehaviour:
   environmentSpawner: {fileID: 2414469588497620088, guid: e9705a2c1a16ac34e972f0654e98293c, type: 3}
   spawnersParentTransform: {fileID: 1861565256}
   coin: {fileID: 7958055761656090969, guid: 3f6c6033997dd7a49adc62dddb2d8eef, type: 3}
-  enemyToSpawn:
-  - {fileID: -7404665381307848970, guid: 595cfe4739977d747a3b1d81bf12ab98, type: 3}
-  - {fileID: 728813532047308263, guid: 99e564f8d730871428d43eebe31a93f4, type: 3}
-  - {fileID: -4380093989530355324, guid: 97f3662c90f08d6499611a9c12fc5f96, type: 3}
-  - {fileID: -2797267989631134641, guid: bd952021e5c400c44a8187f223dbb645, type: 3}
-  - {fileID: -5056663907735360718, guid: c1cb297216e1c9b4caed154ca7d3763b, type: 3}
-  - {fileID: -119989563104274080, guid: 3557f5f789690884d948e650e2c042e5, type: 3}
-  - {fileID: 8606830823723283445, guid: 100f7714331892d4bbabd4a0d19284ea, type: 3}
-  - {fileID: -6464416985222855173, guid: 298e7c24e18c2b649bcd5f9576cccba9, type: 3}
-  - {fileID: 566780817020207407, guid: 031e42c317036294095d85334ebdde91, type: 3}
-  obstaclesToSpawn:
-  - {fileID: 3715831243075504305, guid: e931d460a9c2dec479a8cba0e6ad4cbe, type: 3}
-  wallToSpawn:
-  - {fileID: 2474369868905890697, guid: b522bb5f12032ab4292e2d2cf7c3511f, type: 3}
-  - {fileID: 2461023647482226610, guid: d1e469987309f334a866ceedb74fd90b, type: 3}
-  - {fileID: 9075799326248961267, guid: 84b0bdbe0898cb1428484d5cd53a21b7, type: 3}
-  - {fileID: 32191774733188779, guid: 7c4fb4e1eb5cd63439240323a999bdea, type: 3}
-  environmentToSpawn:
-  - {fileID: 6164904576351957301, guid: 7ab4fca34e232064099dac37c40cfb31, type: 3}
-  - {fileID: -7093728297905997336, guid: 9282884335600c440817958349badd72, type: 3}
-  - {fileID: 4736176336649293373, guid: 4eeebd6fbb10a6b439c0c76a9854ea46, type: 3}
-  - {fileID: 8089997033620832420, guid: 3ce9d028d9f869947a6844abf1a90b42, type: 3}
-  - {fileID: 7121474320114004468, guid: c24c0e1bda16f6a478c01e05fb5cdd98, type: 3}
-  - {fileID: 6586293515428337068, guid: 3bc862a238a78e14db7964c6c9780cf5, type: 3}
 --- !u!1 &1604564260
 GameObject:
   m_ObjectHideFlags: 0

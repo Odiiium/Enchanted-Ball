@@ -2,6 +2,7 @@
 using Zenject;
 using UniRx;
 using DG.Tweening;
+using System.Linq;
 
 public class TurnChanger : MonoBehaviour
 {
@@ -27,18 +28,18 @@ public class TurnChanger : MonoBehaviour
 
     private void MakeUnitsOnLevelMove()
     {
-        foreach (Enemy enemy in levelBuilder.levelSpawner.enemySpawner.enemyList)
+        foreach (Enemy enemy in LevelSpawner().enemySpawner.enemyList)
             enemy.Jump();
-        foreach (Obstacle obstacle in levelBuilder.levelSpawner.obstacleSpawner.obstacleList)
+        foreach (Obstacle obstacle in LevelSpawner().obstacleSpawner.obstacleList)
             obstacle.Move();
-        foreach (Wall obstacle in levelBuilder.levelSpawner.wallSpawner.wallList)
+        foreach (Wall obstacle in LevelSpawner().wallSpawner.wallList)
             obstacle.Move();
-        foreach (Environment environment in levelBuilder.levelSpawner.environmentSpawner.environmentList)
+        foreach (Environment environment in LevelSpawner().environmentSpawner.environmentList)
             environment.Move();
     }
 
     private void SetPlayerDamageAsDefault() => player.damage = 100;
     private void ChangeStateAfterDelay(int delay) => DOVirtual.DelayedCall(delay, () => player.playerStateMachine.ChangeState(new PlayerAimingState()));
-
+    private LevelSpawner LevelSpawner() { return levelBuilder.levelSpawner; }
 
 }

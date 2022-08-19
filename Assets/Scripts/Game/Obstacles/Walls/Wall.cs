@@ -8,6 +8,4 @@ public class Wall : Structure
         wallList.RemoveAt(wallList.IndexOf(wall));
         Destroy(gameObject);
     }
-
-    public class Factory : PlaceholderFactory<Wall> { }
 }

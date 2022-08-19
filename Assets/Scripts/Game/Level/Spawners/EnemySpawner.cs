@@ -5,27 +5,28 @@ using UniRx.Triggers;
 using Zenject;
 public class EnemySpawner : MonoBehaviour 
 {
+    [SerializeField] List<Enemy> enemies;
     EnemyObservable enemyObservable = new EnemyObservable();
-    internal EnemyFacade.Factory enemyFactory;
     internal List<Enemy> enemyList = new List<Enemy>();
     DiContainer diContainer;
 
-    CoinSpawner coinSpawner { get => diContainer.Resolve<CoinSpawner>(); }
+    internal EnemyFactory EnemyFactory { get => enemyFactory ??= diContainer.Resolve<EnemyFactory>(); set => enemyFactory = value; }
+    internal EnemyFactory enemyFactory;
     GridBuilder gridBuilder { get => diContainer.Resolve<GridBuilder>(); }
-    Player player { get => diContainer.Resolve<Player>(); }
 
     [Inject]
-    void Construct(EnemyFacade.Factory _enemyFactories, DiContainer _diContainer)
+    void Construct(EnemyFactory _enemyFactories, DiContainer _diContainer)
     {
-        enemyFactory = _enemyFactories;
+        EnemyFactory = _enemyFactories;
         diContainer = _diContainer;
     }
     internal void SpawnEnemy(int tileNumber)
     {
-        EnemyFacade enemyToSpawn = enemyFactory.Create();
-/*        enemyList.Add(enemyToSpawn);
-        enemyToSpawn.transform.position = gridBuilder.tileArray[tileNumber].transform.position;
-        enemyObservable.SubscribeToObservables(enemyToSpawn, enemyList, diContainer);*/
+        Enemy enemyToSpawn = EnemyFactory.
+            Create(enemies[Random.Range(0, enemies.Count)], gridBuilder.tileArray[tileNumber].transform.position);
+        enemyToSpawn.diContainer = diContainer;
+        enemyList.Add(enemyToSpawn);
+        enemyObservable.SubscribeToObservables(enemyToSpawn, enemyList, diContainer);
     }
 
 }

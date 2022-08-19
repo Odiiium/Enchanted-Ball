@@ -6,28 +6,26 @@ using UniRx;
 
 internal class EnvironmentSpawner : MonoBehaviour
 {
-    List<Environment.Factory> environmentFactories;
-    internal List<Environment> environmentList = new List<Environment>();
     DiContainer diContainer;
+    EnvironmentFactory environmentFactory;
+    [SerializeField] List<Environment> environments;
+    internal List<Environment> environmentList = new List<Environment>();
 
     [Inject]
-    void Construct(List<Environment.Factory> _environmentFactories, DiContainer _diContainer)
+    void Construct(EnvironmentFactory _environmentFactory, DiContainer _diContainer)
     {
-        environmentFactories = _environmentFactories;
+        environmentFactory = _environmentFactory;
         diContainer = _diContainer;
     }
 
     internal void SpawnEnvironment(Vector3 spawnPosition)
     {
-        Environment environment = environmentFactories[Random.Range(0, environmentFactories.Count)].Create();
+        Environment environment = environmentFactory.Create(environments[Random.Range(0, environments.Count)], spawnPosition);
         environmentList.Add(environment);
-        environment.transform.position = spawnPosition;
         environment.Collider.OnCollisionEnterAsObservable().
-            Subscribe(collision =>
-            {
-                if (collision.gameObject.layer == 9) DestroyEnvironment(environment);
-
-            }).AddTo(environment);
+            Subscribe(collision => 
+            { if (collision.gameObject.layer == 9) DestroyEnvironment(environment); })
+            .AddTo(environment);
     }
 
     internal void DestroyEnvironment(Environment environment)

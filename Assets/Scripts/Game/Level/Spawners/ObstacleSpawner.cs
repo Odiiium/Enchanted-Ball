@@ -5,22 +5,24 @@ using Zenject;
 
 internal class ObstacleSpawner : MonoBehaviour
 {
-    internal List<Obstacle.Factory> obstacleFactories;
-    internal List<Obstacle> obstacleList = new List<Obstacle>();
     DiContainer diContainer;
+    ObstacleFactory obstacleFactory;
+    [SerializeField] internal List<Obstacle> obstacles;
+    internal List<Obstacle> obstacleList = new List<Obstacle>();
     GridBuilder gridBuilder { get => diContainer.Resolve<GridBuilder>(); }
 
     [Inject]
-    void Construct(List<Obstacle.Factory> _obstacleFactories, DiContainer _diContainer)
+    void Construct(ObstacleFactory _obstacleFactory, DiContainer _diContainer)
     {
-        obstacleFactories = _obstacleFactories;
+        obstacleFactory = _obstacleFactory;
         diContainer = _diContainer;
     }
     internal void SpawnObstacle(int tileNumber)
     {
-        Obstacle obstacleToSpawn = obstacleFactories[Random.Range(0, obstacleFactories.Count)].Create();
+        Obstacle obstacleToSpawn = obstacleFactory.Create
+            (obstacles[Random.Range(0, obstacles.Count)], gridBuilder.tileArray[tileNumber].transform.position);
         obstacleList.Add(obstacleToSpawn);
-        obstacleToSpawn.transform.position = gridBuilder.tileArray[tileNumber].transform.position;
+
         obstacleToSpawn.HealthPoints.Where(_ => obstacleToSpawn.HealthPoints.Value <= 0).
             Subscribe(_ => obstacleToSpawn.Die(obstacleToSpawn, obstacleList)).AddTo(obstacleToSpawn);
     }
