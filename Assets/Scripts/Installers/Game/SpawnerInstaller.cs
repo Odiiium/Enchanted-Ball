@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
+
 internal class SpawnerInstaller : MonoInstaller
 {
     [SerializeField] CoinSpawner coinSpawner;
@@ -28,14 +29,22 @@ internal class SpawnerInstaller : MonoInstaller
     {
         Container.BindFactory<Coin, Coin.Factory>().FromComponentInNewPrefab(coin);
 
-        foreach (Enemy enemy in enemyToSpawn) Container.
-                BindFactory<Enemy, Enemy.Factory>().FromComponentInNewPrefab(enemy);
+        Container.BindFactory<EnemyFacade, EnemyFacade.Factory>().FromSubContainerResolve().
+            ByNewPrefabInstaller<EnemyInstaller>(ChooseEnemy);
+
+/*        foreach (Enemy enemy in enemyToSpawn) Container.
+                BindFactory<Enemy, Enemy.Factory>().FromComponentInNewPrefab(enemy);*/
         foreach (Obstacle obstacle in obstaclesToSpawn) Container.
                 BindFactory<Obstacle, Obstacle.Factory>().FromComponentInNewPrefab(obstacle);
         foreach (Wall wall in wallToSpawn) Container.
                 BindFactory<Wall, Wall.Factory>().FromComponentInNewPrefab(wall);
-        foreach (Environment environment in environmentToSpawn) Container.
+        foreach (Environment environment in environmentToSpawn) Container. 
                 BindFactory<Environment, Environment.Factory>().FromComponentInNewPrefab(environment);
+    }
+
+    Enemy ChooseEnemy(InjectContext _)
+    {
+         return enemyToSpawn[Random.Range(0, enemyToSpawn.Count)];
     }
     private void BindSpawners()
     {

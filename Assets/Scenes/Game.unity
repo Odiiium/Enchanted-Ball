@@ -1056,6 +1056,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
+      propertyPath: _monoInstallers.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
+      propertyPath: _installerPrefabs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.data[0]
       value: 
       objectReference: {fileID: 1604564262}
@@ -1083,6 +1091,14 @@ PrefabInstance:
       propertyPath: _monoInstallers.Array.data[6]
       value: 
       objectReference: {fileID: 1385296}
+    - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
+      propertyPath: _monoInstallers.Array.data[7]
+      value: 
+      objectReference: {fileID: 1385296}
+    - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
+      propertyPath: _scriptableObjectInstallers.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2281435816614521260, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: m_Name
       value: GameSceneContext

@@ -736,7 +736,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64177279887717898, guid: 45a2654ed7e50b945bbbf5ab0a76e645, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 45a2654ed7e50b945bbbf5ab0a76e645, type: 3}
 --- !u!4 &2109819911340647609 stripped
 Transform:
@@ -1170,7 +1171,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64177279887717898, guid: 45a2654ed7e50b945bbbf5ab0a76e645, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 45a2654ed7e50b945bbbf5ab0a76e645, type: 3}
 --- !u!4 &2920591169081942913 stripped
 Transform:
@@ -1392,7 +1394,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64177279887717898, guid: 45a2654ed7e50b945bbbf5ab0a76e645, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 45a2654ed7e50b945bbbf5ab0a76e645, type: 3}
 --- !u!4 &3119640757425954192 stripped
 Transform:
@@ -1474,7 +1477,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64177279887717898, guid: 45a2654ed7e50b945bbbf5ab0a76e645, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 45a2654ed7e50b945bbbf5ab0a76e645, type: 3}
 --- !u!4 &3508361456321907285 stripped
 Transform:
@@ -2590,7 +2594,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64177279887717898, guid: 45a2654ed7e50b945bbbf5ab0a76e645, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 45a2654ed7e50b945bbbf5ab0a76e645, type: 3}
 --- !u!4 &6222422979928210992 stripped
 Transform:
@@ -2750,7 +2755,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64177279887717898, guid: 45a2654ed7e50b945bbbf5ab0a76e645, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 45a2654ed7e50b945bbbf5ab0a76e645, type: 3}
 --- !u!4 &6463131169932306848 stripped
 Transform:
@@ -4060,7 +4066,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64177279887717898, guid: 45a2654ed7e50b945bbbf5ab0a76e645, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 45a2654ed7e50b945bbbf5ab0a76e645, type: 3}
 --- !u!4 &8034259763636788856 stripped
 Transform:
