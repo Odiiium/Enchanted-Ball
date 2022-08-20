@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
-
+using Zenject;
 internal class Environment : MonoBehaviour
 {
-    EnvironmentMovable environmentMovable = new EnvironmentMovable();
+    internal DiContainer diContainer;
+    internal EnvironmentMovable EnvironmentMovable { get => environmentMovable ??= diContainer.Resolve<EnvironmentMovable>(); }
+    EnvironmentMovable environmentMovable;
+
+    [Inject]
+    void Construct(DiContainer _diContainer) => diContainer = _diContainer;
 
     internal Collider Collider { get => boxCollider ??= GetComponent<Collider>(); }
     Collider boxCollider;
 
-    internal void Move() => environmentMovable.Move(transform);
+    internal void Move() => EnvironmentMovable.Move(transform);
 }

@@ -320,7 +320,6 @@ GameObject:
   - component: {fileID: 5916012666601808344}
   - component: {fileID: 2274095653028123660}
   - component: {fileID: -2797267989631134641}
-  - component: {fileID: 1096909732096460006}
   m_Layer: 6
   m_Name: NyanSlime
   m_TagString: Untagged
@@ -358,18 +357,6 @@ BoxCollider:
   m_Size: {x: 0.75, y: 1, z: 0.75}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &-2797267989631134641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6436266747781938018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1bf1b4f64418f43b19bb872b898dec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1096909732096460006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

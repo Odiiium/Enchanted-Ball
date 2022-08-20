@@ -6,24 +6,15 @@ public class AimInstaller : MonoInstaller
     [SerializeField] FirstPoint firstPoint;
     [SerializeField] SecondPoint secondPoint;
     [SerializeField] AimRay aimRay;
-    [SerializeField] AimRayMovable aimRayMovable;
     [SerializeField] AimRayCaster aimRayCaster;
 
     [SerializeField] GameObject ParentAimObject;
 
     public override void InstallBindings()
     {
-        BindAimMovable();
         BindPoints();
         BindAimRay();
         BindAimCaster();
-    }
-
-    void BindAimMovable()
-    {
-        AimRayMovable aimRayMovableModel = Container.
-            InstantiatePrefabForComponent<AimRayMovable>(aimRayMovable, Vector3.zero, Quaternion.identity, ParentAimObject.transform);
-        Container.Bind<AimRayMovable>().FromInstance(aimRayMovableModel).AsSingle().NonLazy();
     }
     void BindPoints()
     {

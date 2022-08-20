@@ -316,6 +316,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &349982210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 349982211}
+  - component: {fileID: 349982212}
+  m_Layer: 0
+  m_Name: MovableInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &349982211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349982210}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.8740987, y: -1.9131566, z: -76.431145}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1722975964}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &349982212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349982210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bccf28330057c2b428600ca954a1fcbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &391709283
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +407,6 @@ MonoBehaviour:
   firstPoint: {fileID: 6831530338753293716, guid: f72959ecd1a55ef4b849d9bceb4a469d, type: 3}
   secondPoint: {fileID: 5442540060416230469, guid: f14c09b01ad815e4c89087ecdf257f45, type: 3}
   aimRay: {fileID: 7304485752766061872, guid: d006ceed48b87ad4990083454e2e8a46, type: 3}
-  aimRayMovable: {fileID: 5945621933288565652, guid: b31b8ed84cad87e4f9b917df90562bb4, type: 3}
   aimRayCaster: {fileID: 4566396152993978482, guid: 6cc662a6c034d7645a01a01f7482f5de, type: 3}
   ParentAimObject: {fileID: 41082790}
 --- !u!1 &595106020
@@ -897,6 +940,7 @@ Transform:
   - {fileID: 254081620}
   - {fileID: 2039857439}
   - {fileID: 1548911586}
+  - {fileID: 349982211}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1033,7 +1077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _installerPrefabs.Array.size
@@ -1042,31 +1086,31 @@ PrefabInstance:
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.data[0]
       value: 
-      objectReference: {fileID: 1604564262}
+      objectReference: {fileID: 349982212}
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.data[1]
       value: 
-      objectReference: {fileID: 1548911587}
+      objectReference: {fileID: 1604564262}
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.data[2]
       value: 
-      objectReference: {fileID: 2039857438}
+      objectReference: {fileID: 1548911587}
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.data[3]
       value: 
-      objectReference: {fileID: 391709285}
+      objectReference: {fileID: 2039857438}
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.data[4]
       value: 
-      objectReference: {fileID: 1363590604}
+      objectReference: {fileID: 391709285}
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.data[5]
       value: 
-      objectReference: {fileID: 254081619}
+      objectReference: {fileID: 1363590604}
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.data[6]
       value: 
-      objectReference: {fileID: 1385296}
+      objectReference: {fileID: 254081619}
     - target: {fileID: 2177551663763835345, guid: 891ee16fb0154454cb8f8d59680e4312, type: 3}
       propertyPath: _monoInstallers.Array.data[7]
       value: 

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-class AimRayMovable : MonoBehaviour, IMovable
+class AimRayMovable : IMovable
 {
     float speed = 4;
     float borderXPosition = 3.5f;

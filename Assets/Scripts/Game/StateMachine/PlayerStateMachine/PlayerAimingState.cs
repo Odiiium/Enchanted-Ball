@@ -7,20 +7,12 @@ public class PlayerAimingState : IState
     public DiContainer DiContainer { get { return diContainer; } set { diContainer = value; } }
     DiContainer diContainer;
 
-    public void Construct()
-    {
-        aimRay = DiContainer.Resolve<AimRay>();
-    }
-
     public void Enter()
     {
         Construct();
         aimRay.gameObject.SetActive(true);
     }
-
-    public void Exit()
-    {
-        aimRay.gameObject.SetActive(false);
-    }
+    public void Construct() => aimRay = DiContainer.Resolve<AimRay>();
+    public void Exit() => aimRay.gameObject.SetActive(false);
 
 }

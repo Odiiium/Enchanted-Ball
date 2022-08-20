@@ -354,7 +354,6 @@ GameObject:
   - component: {fileID: 8182111387275558036}
   - component: {fileID: 3537486833865034083}
   - component: {fileID: 566780817020207407}
-  - component: {fileID: -1952833642011817949}
   m_Layer: 6
   m_Name: WarriorSlime
   m_TagString: Untagged
@@ -392,18 +391,6 @@ BoxCollider:
   m_Size: {x: 0.75, y: 1, z: 0.75}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &566780817020207407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8847148123719247406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1bf1b4f64418f43b19bb872b898dec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-1952833642011817949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

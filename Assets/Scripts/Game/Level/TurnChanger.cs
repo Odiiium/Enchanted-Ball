@@ -3,6 +3,7 @@ using Zenject;
 using UniRx;
 using DG.Tweening;
 using System.Linq;
+using System.Collections.Generic;
 
 public class TurnChanger : MonoBehaviour
 {
@@ -19,21 +20,23 @@ public class TurnChanger : MonoBehaviour
 
     internal void ChangeTurnToNew()
     {
-        MakeUnitsOnLevelMove();
+        MakeEntitiesMove();
         SetPlayerDamageAsDefault();
         CurrentTurn.Value++;
         levelBuilder.BuildANewPartOfLevel();
         ChangeStateAfterDelay(1);
     }
 
-    private void MakeUnitsOnLevelMove()
+    private void MakeEntitiesMove()
     {
+        LevelSpawner().enemySpawner.enemyList.ForEach(x => x.Jump());
+/*
         foreach (Enemy enemy in LevelSpawner().enemySpawner.enemyList)
-            enemy.Jump();
+            enemy.Jump();*/
         foreach (Obstacle obstacle in LevelSpawner().obstacleSpawner.obstacleList)
             obstacle.Move();
-        foreach (Wall obstacle in LevelSpawner().wallSpawner.wallList)
-            obstacle.Move();
+        foreach (Wall wall in LevelSpawner().wallSpawner.wallList)
+            wall.Move();
         foreach (Environment environment in LevelSpawner().environmentSpawner.environmentList)
             environment.Move();
     }

@@ -45,4 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacles:
-  - {fileID: 3715831243075504305, guid: e931d460a9c2dec479a8cba0e6ad4cbe, type: 3}
+  - {fileID: 4137938375386555739, guid: bf53ff2f232a3834ca1fa88aa5a430eb, type: 3}
+  - {fileID: 1939499205830673919, guid: 6275384cd50a486448f5e46d2aee4744, type: 3}
+  - {fileID: 5427203656106510611, guid: 4763b94eaaf303e4db27e49332f8e880, type: 3}
+  - {fileID: 6103186387108725511, guid: 7d4864338e6e0e14094d0a14a0646020, type: 3}
+  - {fileID: 176372883033819585, guid: b8444ef32736afc4598b249b3f7230d7, type: 3}
+  - {fileID: 3617136536150052436, guid: bf175e2c5eff6814391f9e4760ecd83a, type: 3}
+  - {fileID: 3955578641529080362, guid: 10437627d1752dd408796abc43409826, type: 3}

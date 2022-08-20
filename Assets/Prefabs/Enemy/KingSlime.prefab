@@ -585,7 +585,6 @@ GameObject:
   - component: {fileID: 1287764453787890698}
   - component: {fileID: 7547442262063268365}
   - component: {fileID: 728813532047308263}
-  - component: {fileID: 6453431189478067638}
   m_Layer: 6
   m_Name: KingSlime
   m_TagString: Untagged
@@ -623,18 +622,6 @@ BoxCollider:
   m_Size: {x: 0.75, y: 1, z: 0.75}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &728813532047308263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7027819769946682726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1bf1b4f64418f43b19bb872b898dec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6453431189478067638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
