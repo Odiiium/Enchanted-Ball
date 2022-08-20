@@ -20,7 +20,7 @@ internal class ObstacleSpawner : MonoBehaviour
     internal void SpawnObstacle(int tileNumber)
     {
         Obstacle obstacleToSpawn = obstacleFactory.Create
-            (obstacles[Random.Range(0, obstacles.Count)], gridBuilder.tileArray[tileNumber].transform.position + Vector3.up * .5f);
+            (obstacles[Random.Range(0, obstacles.Count)], gridBuilder.tileArray[tileNumber].transform.position + Vector3.up * .45f);
         obstacleList.Add(obstacleToSpawn);
 
         obstacleToSpawn.HealthPoints.Where(_ => obstacleToSpawn.HealthPoints.Value <= 0).

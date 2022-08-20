@@ -30,15 +30,9 @@ public class TurnChanger : MonoBehaviour
     private void MakeEntitiesMove()
     {
         LevelSpawner().enemySpawner.enemyList.ForEach(x => x.Jump());
-/*
-        foreach (Enemy enemy in LevelSpawner().enemySpawner.enemyList)
-            enemy.Jump();*/
-        foreach (Obstacle obstacle in LevelSpawner().obstacleSpawner.obstacleList)
-            obstacle.Move();
-        foreach (Wall wall in LevelSpawner().wallSpawner.wallList)
-            wall.Move();
-        foreach (Environment environment in LevelSpawner().environmentSpawner.environmentList)
-            environment.Move();
+        LevelSpawner().obstacleSpawner.obstacleList.ForEach(x => x.Move());
+        LevelSpawner().wallSpawner.wallList.ForEach(x => x.Move());
+        LevelSpawner().environmentSpawner.environmentList.ForEach(x => x.Move());
     }
 
     private void SetPlayerDamageAsDefault() => player.damage = 100;
