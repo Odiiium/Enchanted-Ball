@@ -36,7 +36,10 @@ public class TurnChanger : MonoBehaviour
     }
 
     private void SetPlayerDamageAsDefault() => player.damage = 100;
-    private void ChangeStateAfterDelay(int delay) => DOVirtual.DelayedCall(delay, () => player.playerStateMachine.ChangeState(new PlayerAimingState()));
+    private void ChangeStateAfterDelay(int delay) => DOVirtual.DelayedCall(delay, () =>
+    {
+        if (player.playerStateMachine.currentState is not PlayerDeathState)
+            player.playerStateMachine.ChangeState(new PlayerAimingState());
+    });
     private LevelSpawner LevelSpawner() { return levelBuilder.levelSpawner; }
-
 }

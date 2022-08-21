@@ -48,6 +48,7 @@ MonoBehaviour:
   playerHealbarCanvas: {fileID: 1415529977239792154, guid: 6f9c8d6f01387fd418d976ca2d21dd6a, type: 3}
   playerMoneyCanvas: {fileID: 6083368301445037105, guid: 59b5de68ccf5b114e9992cf1e1775138, type: 3}
   playerScoreCanvas: {fileID: 7068793889962349442, guid: b29edd8173778d44999f2d29528d3bb1, type: 3}
+  endGameCanvas: {fileID: 1787201776371473057, guid: 9bb93cf9d7e965844ac93ddf9652e28f, type: 3}
 --- !u!1 &62574205995454495
 GameObject:
   m_ObjectHideFlags: 0

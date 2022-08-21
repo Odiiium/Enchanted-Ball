@@ -1,21 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Game.UI.EndGameScreen
+public class EndGameUICanvas : MonoBehaviour
 {
-    public class EndGameUICanvas : MonoBehaviour
-    {
+    internal EndGameUIController Controller { get => endGameUIController ??= GetComponent<EndGameUIController>(); }
+    EndGameUIController endGameUIController;
 
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-    }
 }

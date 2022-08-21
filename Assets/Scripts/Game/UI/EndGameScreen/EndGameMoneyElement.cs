@@ -1,21 +1,12 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using TMPro;
 
-namespace Assets.Scripts.Game.UI.EndGameScreen
+public class EndGameMoneyElement : MonoBehaviour
 {
-    public class EndGameMoneyElement : MonoBehaviour
-    {
+    internal TextMeshProUGUI Text { get => text ??= GetComponentInChildren<TextMeshProUGUI>(); }
+    TextMeshProUGUI text;
 
-        // Use this for initialization
-        void Start()
-        {
+    internal void ShowMoneyEarned(int moneyBeforeStart, int money) =>
+        Text.text = "Earned:" + (money - moneyBeforeStart);
 
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-    }
 }

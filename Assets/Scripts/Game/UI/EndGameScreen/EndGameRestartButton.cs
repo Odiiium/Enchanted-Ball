@@ -1,21 +1,10 @@
-﻿using System.Collections;
-using UnityEngine;
-
-namespace Assets.Scripts.Game.UI.EndGameScreen
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+public class EndGameRestartButton : MonoBehaviour
 {
-    public class EndGameRestartButton : MonoBehaviour
-    {
+    internal Button Button { get => button ??= GetComponent<Button>(); }
+    Button button;
 
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-    }
+    internal void Restart() => SceneManager.LoadScene("Game");
 }

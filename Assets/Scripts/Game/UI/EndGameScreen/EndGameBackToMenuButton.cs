@@ -1,21 +1,11 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-namespace Assets.Scripts.Game.UI.EndGameScreen
+public class EndGameBackToMenuButton : MonoBehaviour
 {
-    public class EndGameBackToMenuButton : MonoBehaviour
-    {
+    internal Button Button { get => button ??= GetComponent<Button>();}
+    Button button;
 
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-    }
+    internal void BackToMenu() => SceneManager.LoadScene("Menu");
 }

@@ -1,21 +1,18 @@
-﻿using System.Collections;
-using UnityEngine;
-
-namespace Assets.Scripts.Game.UI.EndGameScreen
+﻿using UnityEngine;
+using TMPro;
+public class EndGameHighscoreElement : MonoBehaviour
 {
-    public class EndGameHighscoreElement : MonoBehaviour
+    internal TextMeshProUGUI Text { get => text ??= GetComponentInChildren<TextMeshProUGUI>(); }
+    TextMeshProUGUI text;
+
+    internal void ShowHighScore(int score)
     {
-
-        // Use this for initialization
-        void Start()
+        if (PlayerPrefs.GetInt("HighScore") < score)
         {
-
+            Text.gameObject.SetActive(true);
+            PlayerPrefs.SetInt("HighScore", score);
         }
+        else Text.gameObject.SetActive(false);
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }

@@ -1,21 +1,10 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using TMPro;
 
-namespace Assets.Scripts.Game.UI.EndGameScreen
+public class EndGameScoreElement : MonoBehaviour
 {
-    public class EndGameScoreElement : MonoBehaviour
-    {
+    internal TextMeshProUGUI Text { get => text ??= GetComponentInChildren<TextMeshProUGUI>(); }
+    TextMeshProUGUI text;
 
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-    }
+    internal void ShowScore(int score) => Text.text = "SCORE:" + score;
 }

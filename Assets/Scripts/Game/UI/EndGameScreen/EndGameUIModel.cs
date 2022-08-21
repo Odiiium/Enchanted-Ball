@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class EndGameUIModel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    DiContainer diContainer;
+    internal PlayerScoreCanvas ScoreCanvas { get => playerScoreCanvas ??= diContainer.Resolve<PlayerScoreCanvas>(); }
+    PlayerScoreCanvas playerScoreCanvas;
+    internal PlayerMoneyCanvas MoneyCanvas { get => playerMoneyCanvas ??= diContainer.Resolve<PlayerMoneyCanvas>(); }
+    PlayerMoneyCanvas playerMoneyCanvas;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Inject]
+    private void Construct(DiContainer _diContainer) => diContainer = _diContainer;
 }

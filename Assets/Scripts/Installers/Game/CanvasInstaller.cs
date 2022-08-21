@@ -7,6 +7,7 @@ public class CanvasInstaller : MonoInstaller
     [SerializeField] PlayerHealthBarCanvas playerHealbarCanvas;
     [SerializeField] PlayerMoneyCanvas playerMoneyCanvas;
     [SerializeField] PlayerScoreCanvas playerScoreCanvas;
+    [SerializeField] EndGameUICanvas endGameCanvas;
 
     public override void InstallBindings()
     {
@@ -14,6 +15,7 @@ public class CanvasInstaller : MonoInstaller
         BindPlayerHealthBarCanvas();
         BindPlayerScoreCanvas();
         BindPlayerMoneyCanvas();
+        BindEndGameCanvas();
     }
 
     private void BindPlayerMovementCanvas()
@@ -42,5 +44,12 @@ public class CanvasInstaller : MonoInstaller
         PlayerMoneyCanvas playerMoneyCanvasModel = Container.
             InstantiatePrefabForComponent<PlayerMoneyCanvas>(playerMoneyCanvas, Vector3.zero, Quaternion.identity, null);
         Container.Bind<PlayerMoneyCanvas>().FromInstance(playerMoneyCanvasModel).AsSingle().NonLazy();
+    }
+    
+    private void BindEndGameCanvas()
+    {
+        EndGameUICanvas endGameCanvasModel = Container.
+            InstantiatePrefabForComponent<EndGameUICanvas>(endGameCanvas, Vector3.zero, Quaternion.identity, null);
+        Container.Bind<EndGameUICanvas>().FromInstance(endGameCanvasModel).AsSingle().NonLazy();
     }
 }
