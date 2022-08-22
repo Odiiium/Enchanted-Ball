@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
-using UniRx;
 
 public class Player : MonoBehaviour
 {
@@ -23,14 +20,7 @@ public class Player : MonoBehaviour
         playerMovementCanvas = _playerMovementCanvas;
     }
 
-    private void Start()
-    {
-        playerMovementCanvas.Controller.Model.SetInitialAimingState(this);
-    }
-
-    internal void DoShot()
-    {
-        Ball ball = CurrentWeapon.Shot();
-    }
+    private void Start() => playerMovementCanvas.Controller.SetInitialAimingState(this);
+    internal void DoShot() => CurrentWeapon.Shot();
 
 }
