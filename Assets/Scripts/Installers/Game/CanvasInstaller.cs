@@ -8,6 +8,7 @@ public class CanvasInstaller : MonoInstaller
     [SerializeField] PlayerMoneyCanvas playerMoneyCanvas;
     [SerializeField] PlayerScoreCanvas playerScoreCanvas;
     [SerializeField] EndGameUICanvas endGameCanvas;
+    [SerializeField] PauseMenuCanvas pauseMenuCanvas;
 
     public override void InstallBindings()
     {
@@ -15,41 +16,49 @@ public class CanvasInstaller : MonoInstaller
         BindPlayerHealthBarCanvas();
         BindPlayerScoreCanvas();
         BindPlayerMoneyCanvas();
+        BindPauseMenuCanvas();
         BindEndGameCanvas();
     }
 
-    private void BindPlayerMovementCanvas()
+    void BindPlayerMovementCanvas()
     {
         PlayerMovementCanvas playerMovementCanvasModel = Container.
             InstantiatePrefabForComponent<PlayerMovementCanvas>(playerMovementCanvas, Vector3.zero, Quaternion.identity, null);
         Container.Bind<PlayerMovementCanvas>().FromInstance(playerMovementCanvasModel).AsSingle().NonLazy();
     }
 
-    private void BindPlayerHealthBarCanvas()
+    void BindPlayerHealthBarCanvas()
     {
         PlayerHealthBarCanvas playerHealbarCanvasModel = Container.
             InstantiatePrefabForComponent<PlayerHealthBarCanvas>(playerHealbarCanvas, Vector3.zero, Quaternion.identity, null);
             Container.Bind<PlayerHealthBarCanvas>().FromInstance(playerHealbarCanvasModel).AsSingle().NonLazy();
     }
 
-    private void BindPlayerScoreCanvas()
+    void BindPlayerScoreCanvas()
     {
         PlayerScoreCanvas playerScoreCanvasModel = Container.
             InstantiatePrefabForComponent<PlayerScoreCanvas>(playerScoreCanvas, Vector3.zero, Quaternion.identity, null);
         Container.Bind<PlayerScoreCanvas>().FromInstance(playerScoreCanvasModel).AsSingle().NonLazy();
     }
 
-    private void BindPlayerMoneyCanvas()
+    void BindPlayerMoneyCanvas()
     {
         PlayerMoneyCanvas playerMoneyCanvasModel = Container.
             InstantiatePrefabForComponent<PlayerMoneyCanvas>(playerMoneyCanvas, Vector3.zero, Quaternion.identity, null);
         Container.Bind<PlayerMoneyCanvas>().FromInstance(playerMoneyCanvasModel).AsSingle().NonLazy();
     }
     
-    private void BindEndGameCanvas()
+    void BindEndGameCanvas()
     {
         EndGameUICanvas endGameCanvasModel = Container.
             InstantiatePrefabForComponent<EndGameUICanvas>(endGameCanvas, Vector3.zero, Quaternion.identity, null);
         Container.Bind<EndGameUICanvas>().FromInstance(endGameCanvasModel).AsSingle().NonLazy();
+    }
+    
+    void BindPauseMenuCanvas()
+    {
+        PauseMenuCanvas pauseMenuModel = Container.
+            InstantiatePrefabForComponent<PauseMenuCanvas>(pauseMenuCanvas, Vector3.zero, Quaternion.identity, null);
+        Container.Bind<PauseMenuCanvas>().FromInstance(pauseMenuModel).AsSingle().NonLazy();
     }
 }

@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 1238002197}
   m_Layer: 2
   m_Name: MainCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -788,6 +788,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 62574205975644419, guid: 57f84576b0095d443bde1ba30565cf55, type: 3}
+      propertyPath: pauseMenuCanvas
+      value: 
+      objectReference: {fileID: 7476779175142063580, guid: ba6b7729efef53147a73418a0aef68ba, type: 3}
     - target: {fileID: 62574206377406773, guid: 57f84576b0095d443bde1ba30565cf55, type: 3}
       propertyPath: ParentAimObject
       value: 
