@@ -20,6 +20,8 @@ internal class SettingsUIController : MonoBehaviour
 
     void SubscribeToEvents()
     {
+        SetInitialVolume();
+        SetStartedVolume();
         SubscribeToChangeVolume();
         SubscribeToMenuProvider();
     }
@@ -31,6 +33,17 @@ internal class SettingsUIController : MonoBehaviour
         Subscribe(_ => GoToMainMenu());
 
     void ChangeVolume(float value) => SettingsUIModel.Sound.Volume = value;
+
+    void SetStartedVolume() => View.VolumeSlider.value = SettingsUIModel.Sound.Volume;
+
+    void SetInitialVolume()
+    {
+        if (PlayerPrefs.GetInt("InitialVolumeKey") == 0)
+        {
+            SettingsUIModel.Sound.Volume = .5f;
+            PlayerPrefs.SetInt("InitialVolumeKey", 1);
+        }
+    }
 
     private void GoToMainMenu()
     {

@@ -17,10 +17,9 @@ public class Enemy : MonoBehaviour, IEnemy
         diContainer = _diContainer;
         Model.diContainer = diContainer;
     }
-    void Start()
-    {
-        Model.EnemySettings.SetUpSettings(Model.HealthController.Model.HealthPoints.Value, Model.HealthController.Model.maxHealth);
-    }
+    void Awake() => Model.EnemySettings.SetUpSettings
+        (Model.HealthController.Model.HealthPoints.Value, Model.HealthController.Model.maxHealth);
+
     public void Die(Enemy enemy, List<Enemy> enemyList)
     {
         playerScoreCanvas.Controller.AddScore();

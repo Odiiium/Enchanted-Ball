@@ -26,18 +26,19 @@ internal class EnemyObservable
             AddTo(enemyToSpawn);
     }
 
-    void SubscribeToCollisionDetectionEvent(Enemy enemyToSpawn, List<Enemy> enemyList, Player player)
+    void SubscribeToCollisionDetectionEvent(Enemy enemy, List<Enemy> enemyList, Player player)
     {
-        enemyToSpawn.Model.Collider.OnCollisionEnterAsObservable().
+        enemy.Model.Collider.OnCollisionEnterAsObservable().
             Subscribe(collision =>
             {
                 if (collision.gameObject.layer == 7)
                 { 
-                    EnemyHealth(enemyToSpawn).Value -= player.damage;
-                    enemyToSpawn.transform.DOPunchScale(Vector3.one * .25f, .3f, 3);
+                    EnemyHealth(enemy).Value -= player.damage;
+                    enemy.transform.DOPunchScale(Vector3.one * .25f, .3f, 3);
+                    enemy.Model.AudioSource.Play();
                 }
             }
-            ).AddTo(enemyToSpawn);
+            ).AddTo(enemy);
     }
 
     void SubscibeToTriggerDetectionEvent(Enemy enemyToSpawn, List<Enemy> enemyList)

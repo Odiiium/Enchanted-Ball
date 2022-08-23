@@ -7,5 +7,5 @@ class PauseMenuRestartButton : MonoBehaviour
     internal Button Button { get => button ??= GetComponentInChildren<Button>(); }
     Button button;
 
-    internal void DoRestart() => SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
+    internal void DoRestart() => SceneManager.LoadScene("Game");
 }

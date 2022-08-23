@@ -3,6 +3,8 @@ using Zenject;
 internal class EnemyModel : MonoBehaviour
 {
     internal DiContainer diContainer;
+    internal AudioSource AudioSource { get => audioSource ??= GetComponentInParent<AudioSource>(); }
+    AudioSource audioSource;
     internal EnemyMovable EnemyMovable { get => enemyMovable ??= diContainer.Resolve<EnemyMovable>(); } 
     EnemyMovable enemyMovable;
     internal Collider Collider { get => enemyCollider ??= GetComponentInParent<Collider>(); }

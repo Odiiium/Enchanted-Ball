@@ -27,9 +27,6 @@ public class StructureHitProvider : IStructureHitVisitor
     public void Visit(HealWall wall, DiContainer diContainer)
     {
         PlayerHealthBarCanvas playerHealthBarCanvas = _canvas ??= diContainer.Resolve<PlayerHealthBarCanvas>();
-        float playerHealth = playerHealthBarCanvas.Controller.Model.PlayerHealthPoints.Value;
-        playerHealth += (playerHealth <= 275)? 25 : 0;
-        playerHealthBarCanvas.Controller.View.FillTheHealthBar
-            (playerHealth, playerHealthBarCanvas.Controller.Model.PlayerMaximumHealthPoints);
+        playerHealthBarCanvas.Controller.AddHealthPoints(25);
     }
 }

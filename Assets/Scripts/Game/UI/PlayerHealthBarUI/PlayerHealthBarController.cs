@@ -21,5 +21,6 @@ public class PlayerHealthBarController : MonoBehaviour
     }
 
     internal void ReduceHealthPoints(int damage) => Model.PlayerHealthPoints.Value -= damage;
+    internal void AddHealthPoints(int addCount) => Model.PlayerHealthPoints.Value += addCount;
 
 }
