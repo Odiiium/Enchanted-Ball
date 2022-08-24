@@ -6,24 +6,24 @@ using UnityEngine;
 using UniRx.Triggers;
 internal class EnemyObservable
 {
-    internal void SubscribeToObservables(Enemy enemyToSpawn, List<Enemy> enemyList, DiContainer diContainer)
+    internal void SubscribeToObservables(Enemy enemy, List<Enemy> enemyList, DiContainer diContainer)
     {
-        SubscribeToHealthChangedEvent(enemyToSpawn, enemyList, diContainer);
-        SubscribeToCollisionDetectionEvent(enemyToSpawn, enemyList, diContainer.Resolve<Player>());
-        SubscibeToTriggerDetectionEvent(enemyToSpawn, enemyList);
+        SubscribeToHealthChangedEvent(enemy, enemyList, diContainer);
+        SubscribeToCollisionDetectionEvent(enemy, enemyList, diContainer.Resolve<Player>());
+        SubscibeToTriggerDetectionEvent(enemy, enemyList);
     }
 
-    void SubscribeToHealthChangedEvent(Enemy enemyToSpawn, List<Enemy> enemyList, DiContainer diContainer)
+    void SubscribeToHealthChangedEvent(Enemy enemy, List<Enemy> enemyList, DiContainer diContainer)
     {
         CoinSpawner coinSpawner = diContainer.Resolve<CoinSpawner>();
-        EnemyHealth(enemyToSpawn).
-            Where(_ => EnemyHealth(enemyToSpawn).Value <= 0).
+        EnemyHealth(enemy).
+            Where(_ => EnemyHealth(enemy).Value <= 0).
             Subscribe(_ =>
             {
-                enemyToSpawn.Die(enemyToSpawn, enemyList);
-                coinSpawner.SpawnCoins(enemyToSpawn.transform.position);
+                enemy.Die(enemy, enemyList);
+                coinSpawner.SpawnCoins(enemy.transform.position, enemy, 6);
             }).
-            AddTo(enemyToSpawn);
+            AddTo(enemy);
     }
 
     void SubscribeToCollisionDetectionEvent(Enemy enemy, List<Enemy> enemyList, Player player)
@@ -41,16 +41,16 @@ internal class EnemyObservable
             ).AddTo(enemy);
     }
 
-    void SubscibeToTriggerDetectionEvent(Enemy enemyToSpawn, List<Enemy> enemyList)
+    void SubscibeToTriggerDetectionEvent(Enemy enemy, List<Enemy> enemyList)
     {
-        enemyToSpawn.Model.Collider.OnTriggerEnterAsObservable().
+        enemy.Model.Collider.OnTriggerEnterAsObservable().
             Subscribe(collision =>
             {
                 if (collision.gameObject.layer == 8)
-                    enemyToSpawn.Attack();
-                enemyToSpawn.Die(enemyToSpawn, enemyList);
+                    enemy.Attack();
+                enemy.Die(enemy, enemyList);
             }
-            ).AddTo(enemyToSpawn);
+            ).AddTo(enemy);
     }   
     
     FloatReactiveProperty EnemyHealth(Enemy enemyToSpawn) => enemyToSpawn.Model.HealthController.Model.HealthPoints;

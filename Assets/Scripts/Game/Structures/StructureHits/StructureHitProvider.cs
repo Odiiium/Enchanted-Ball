@@ -4,6 +4,8 @@ public class StructureHitProvider : IStructureHitVisitor
 {
     Player _player;
     PlayerHealthBarCanvas _canvas;
+    CoinSpawner _coinSpawner;
+    PlayerMoneyCanvas _moneyCanvas;
 
     public void Visit(Structure structure, DiContainer diContainer) { }
     public void Visit(DoubleDamageWall wall, DiContainer diContainer)
@@ -28,5 +30,12 @@ public class StructureHitProvider : IStructureHitVisitor
     {
         PlayerHealthBarCanvas playerHealthBarCanvas = _canvas ??= diContainer.Resolve<PlayerHealthBarCanvas>();
         playerHealthBarCanvas.Controller.AddHealthPoints(25);
+    }
+
+    public void Visit(MoneyWall wall, DiContainer diContainer)
+    {
+        int randomCountOfCoins = Random.Range(1, 3);
+        CoinSpawner coinSpawner = _coinSpawner ??= diContainer.Resolve<CoinSpawner>();
+        coinSpawner.SpawnCoins(wall.transform.position, wall, 3);
     }
 }

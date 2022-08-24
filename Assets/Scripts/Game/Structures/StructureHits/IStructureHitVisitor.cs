@@ -6,6 +6,6 @@ public interface IStructureHitVisitor
     void Visit(DoubleDamageWall wall, DiContainer diContainer);
     void Visit(DeathWall wall, DiContainer diContainer);
     void Visit(ReduceDamageWall wall, DiContainer diContainer);
-
     void Visit(HealWall wall, DiContainer diContainer);
+    void Visit(MoneyWall wall, DiContainer diContainer);
 }

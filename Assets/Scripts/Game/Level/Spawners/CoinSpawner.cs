@@ -13,13 +13,16 @@ internal class CoinSpawner : MonoBehaviour
         diContainer = _diContainer; 
         coinFactory = _coinFactory;
     }
-    internal void SpawnCoins(Vector3 positionToSpawn)
+    internal void SpawnCoins(Vector3 positionToSpawn, Object obj, int coinsCount)
     {
-        int CoinsCountToSpawn = Random.Range(1, 6);
+        int CoinsCountToSpawn = Random.Range(1, coinsCount);
         for (int i = 0; i < CoinsCountToSpawn; i++)
         {
             Coin coin = coinFactory.Create();
             coin.transform.position = positionToSpawn + Vector3.up * 0.3f;
+
+            if (obj is Enemy) coin.DoJump(coin.RandomJumpVector());
+            else if (obj is Wall) coin.DoJump(coin.WallRandomJumpVector(positionToSpawn));
         }
         playerMoneyCanvas.Controller.AddCoins(CoinsCountToSpawn);
     }
