@@ -427,16 +427,18 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 1aa32906a1fca6646b84297564444cec, type: 2}
   - {fileID: 2100000, guid: 4d87a6bdd2a384340b77755c13f0b60b, type: 2}
   - {fileID: 2100000, guid: c103d4bf849487e44ac39b18b781c03c, type: 2}
-  ballPrice: 0000000064000000c800000090010000bc020000e8030000dc050000d0070000
+  - {fileID: 2100000, guid: 59a2c2cebfd0aa64499b9cc0ad2082bf, type: 2}
+  ballPrice: 00000000640000005e010000580200008403000078050000d0070000b80b000088130000
   ballNames:
   - Standart
   - Smoky
   - Pallete
-  - Purple Flame
+  - Night Sky
   - Water
-  - Eye
-  - Life Cells
-  - Stars
+  - Elastic Wood
+  - Bricks
+  - Cloudy
+  - Nyan
 --- !u!114 &5925052849341199570
 MonoBehaviour:
   m_ObjectHideFlags: 0

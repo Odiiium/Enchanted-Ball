@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1924656817699771938
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 0
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ball6
-  m_Shader: {fileID: 10704, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: Ball8
+  m_Shader: {fileID: 10721, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -54,9 +41,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: bb4def3467aaf224fa3d84ea39bb882b, type: 3}
-        m_Scale: {x: 2, y: 2}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: f261f5e5642a122459949a398033d017, type: 3}
+        m_Scale: {x: 4, y: 2}
+        m_Offset: {x: 0.5, y: 0.5}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -71,8 +58,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BUILTIN_QueueControl: 0
-    - _BUILTIN_QueueOffset: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -84,6 +69,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Shininess: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
